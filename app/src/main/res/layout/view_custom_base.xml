@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/layoutBar">
+    <ViewAnimator
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/menu_animator">
+        <RelativeLayout
+            android:id="@+id/toolbar_background"
+            android:layout_width="match_parent"
+            android:background="@color/google_blue"
+            android:layout_height="?attr/actionBarSize" >
+
+            <LinearLayout
+                android:id="@+id/menu_left_btn"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center">
+                    <ImageView
+                        android:id="@+id/menu_icons"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:scaleType="fitStart"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@mipmap/ic_launcher" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="72dp"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/logoTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="gone"
+                    android:gravity="top|center"/>
+
+                <TextView
+                    android:id="@+id/menu_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="35"
+                    android:ellipsize="marquee"
+                    android:gravity="top|left"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="Title"
+                    android:textSize="@dimen/medbooks_18dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/medbook_nav_more_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:paddingRight="16dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/menu_right_btn2"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:scaleType="fitCenter"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:src="@mipmap/ic_launcher" />
+
+                <ImageView
+                    android:id="@+id/menu_right_btn"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:scaleType="fitCenter"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:src="@mipmap/ic_launcher" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ViewAnimator>
+</LinearLayout>

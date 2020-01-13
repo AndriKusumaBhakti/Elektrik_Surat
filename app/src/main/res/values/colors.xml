@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/google_green</color>
+    <color name="colorPrimaryDark">@color/google_green</color>
+    <color name="colorAccent">@color/google_green</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_black">#55000000</color>
+    <color name="transparent_black_lv2">#CC000000</color>
+    <color name="transparent_black_lv1">#99000000</color>
+    <color name="transparent_black_lv3">#33000000</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="actionbar_color">#330000ff</color>
+    <color name="menu_bar_color">#7f3f98</color>
+    <color name="transparent_purples">#7f3f98</color>
+    <color name="other_text_color">#A478B7</color>
+
+    <!--Color Heart Rate-->
+    <color name="colorDividerColor">#ffd6d6d6</color>
+    <color name="background">#ffffffff</color>
+    <color name="heart_rate_not_active">#ff7e7e7e</color>
+    <color name="heart_rate_button_stroke_pressed">@color/colorAccent</color>
+    <color name="heart_rate_button_background_pressed">#ffecebeb</color>
+    <color name="heart_rate_button_stroke">@color/colorAccent</color>
+    <color name="heart_rate_button_background">@color/transparent</color>
+    <color name="background_dark">#fff2f2f2</color>
+    <color name="colorSecondaryText">#ff727272</color>
+    <color name="colorPrimaryText">#ff212121</color>
+    <color name="black15alpha">#26000000</color>
+    <color name="black75alpha">#bf000000</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="orange_cadence">#ffe59400</color>
+    <color name="heart_rate_active">#ffaf504c</color>
+    <color name="header">#fffafafa</color>
+
+    <color name="separator_color">#d2d2d2</color>
+    <color name="view_date_input_text">#FF131619</color>
+    <color name="gray_text">#FFABABAB</color>
+    <color name="gray_text2">#FF777777</color>
+    <color name="gray_text3">#949494</color>
+    <color name="gray_text4">#262626</color>
+    <color name="gray_line">#d7c9e0</color>
+    <color name="app_background">#f2f2f2</color>
+
+    <color name="profile_edit_picture_title">#31BCAD</color>
+    <color name="list_background_color">#EAF8F7</color>
+    <color name="sub_menu_font_color">#88ADA9</color>
+    <color name="dark_font_color">#064740</color>
+    <color name="news_purple">#7E3598</color>
+    <color name="transparent_news_purple">#557E3598</color>
+    <color name="transparent_news_purple2">#337E3598</color>
+    <color name="transparent_news_green">#4b32bcad</color>
+    <color name="transparent_purple_super">#227E3598</color>
+    <color name="light_news_purple">#f2ebf3</color>
+    <color name="purple_divider_color">#997E3598</color>
+    <color name="facebook_normal">#5e7df8</color>
+    <color name="facebook_selected">#4565A3</color>
+    <color name="signup_normal">#2cd7d8</color>
+    <color name="signup_selected">#0ab4b5</color>
+    <color name="dark_text_input">#474747</color>
+
+    <color name="separator_list_elemen_gray">#FFEBEBEB</color>
+    <color name="button_login">#31BCAD</color>
+    <color name="button_login2">#006633</color>
+    <color name="news_turquoise">#31BBAD</color>
+    <color name="yellow">#FFCB05</color>
+    <color name="medbooks_text">#7E3598</color>
+    <color name="medbooks_header_dialog">#31BCAD</color>
+
+    <color name="material_red">#EA4335</color>
+
+    <color name="google_blue">#4285F4</color>
+    <color name="google_red">#EA4335</color>
+    <color name="google_green">#34A853</color>
+    <color name="google_yellow">#FBBC05</color>
+
+
+    <color name="side_bar_background">#7f3f98</color>
+    <color name="side_bar_selected_background">#9965AD</color>
+    <color name="dark_purple">#7f3f98</color>
+    <color name="medbook_green">#4BCBBC</color>
+    <color name="medbook_yellow">#F2C029</color>
+    <color name="medbook_red">#CD1A5C</color>
+    <color name="medbook_purple">#8043A0</color>
+    <color name="all_record_background">#7E3F98</color>
+    <color name="main_background">#f7f6fa</color>
+
+    <color name="medbooks_card_bg">#ffffffff</color>
+    <color name="medbooks_card_selected">#227E3598</color>
+
+    <color name="light_gray">#fff0f0f0</color>
+    <color name="orange">#e0f9f6</color>
+
+    <color name="multiple_image_select_primary">#7E3F98</color>
+    <color name="multiple_image_select_primaryDark">#5b1b73</color>
+    <color name="multiple_image_select_primaryLight">#9965AD</color>
+    <color name="multiple_image_select_accent">#536DFE</color>
+    <color name="multiple_image_select_primaryText">#212121</color>
+    <color name="multiple_image_select_secondaryText">#727272</color>
+    <color name="multiple_image_select_divider">#B6B6B6</color>
+    <color name="multiple_image_select_toolbarPrimaryText">#FFFFFF</color>
+    <color name="multiple_image_select_albumTextBackground">#99FFFFFF</color>
+    <color name="multiple_image_select_imageSelectBackground">#000000</color>
+
+    <color name="purple1">#7E3598</color>
+    <color name="purple_transparant">#bf84e1</color>
+    <color name="purple_transparant2">#d2bee7</color>
+    <color name="white1">#FFFFFF</color>
+    <color name="grey1">#B3B3B3</color>
+    <color name="grey2">#4D4D4D</color>
+    <color name="purple2">#5B1B72</color>
+    <color name="red1">#AA0000</color>
+    <color name="divider_color">#EEEEEE</color>
+    <color name="divider_color2">#e2e2e3</color>
+    <color name="greylight">#f3f3f4</color>r>
+    <color name="greywhite">#f2f2f3</color>r>
+    <color name="greywhite2">#f7f6fb</color>
+    <color name="textmenu">#333333</color>
+    <color name="bg_menu_home">#f6f5f9</color>
+
+    <color name="day_color">#202020</color>
+    <color name="holiday_color">#fd0f20</color>
+    <color name="not_day_color">#bcbabb</color>
+    <color name="text_current_month">#808185</color>
+
+
+    <color name="bg_disable_date_color">#f6f4f5</color>
+    <color name="text_disable_date_color">#b9b7b8</color>
+
+    <color name="tint_color">#FF7E3598</color>
+    <color name="base_background_apps">#f6f6f9</color>
+
+    <color name="new_purple">#7f3f98</color>
+
+
+    <integer-array name="material_colors">
+        <item>@color/new_purple</item>
+        <item>@color/new_purple</item>
+        <item>@color/new_purple</item>
+        <item>@color/new_purple</item>
+    </integer-array>
+</resources>

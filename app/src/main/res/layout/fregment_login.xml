@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_page_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_e_surat"
+    android:fitsSystemWindows="true">
+    <ViewAnimator
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/menu_animator">
+        <RelativeLayout
+            android:id="@+id/toolbar_background"
+            android:layout_width="match_parent"
+            android:background="@color/google_blue"
+            android:layout_height="?attr/actionBarSize" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="72dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/menu_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="35"
+                    android:ellipsize="marquee"
+                    android:gravity="top|left"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="Login"
+                    android:textSize="20dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/medbook_nav_more_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:paddingRight="16dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/menu_right_btn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitCenter"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:src="@drawable/icon_reload_white" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ViewAnimator>
+    <ScrollView
+        android:layout_below="@+id/menu_animator"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/medbooks_20dp"
+            android:paddingTop="@dimen/medbooks_10dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/medbooks_20dp"
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/medbooks_30dp"
+                    android:layout_marginRight="@dimen/medbooks_30dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/login_label_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginBottom="@dimen/medbooks_20dp">
+
+                        <EditText
+                            android:id="@+id/login_input_username"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/medbooks_48dp"
+                            android:layout_marginTop="@dimen/medbooks_10dp"
+                            android:background="@drawable/login_shape_input"
+                            android:ems="10"
+                            android:textColorHint="@android:color/black"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:hint="NIK"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:nextFocusDown="@+id/login_input_password"
+                            android:textSize="@dimen/medbooks_14dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/login_label_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/medbooks_10dp">
+
+                        <EditText
+                            android:id="@+id/login_input_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/medbooks_48dp"
+                            android:background="@drawable/login_shape_input"
+                            android:textColorHint="@color/white"
+                            android:textColor="@color/white"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="kata sandi"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:textSize="@dimen/medbooks_14dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <TextView
+                        android:id="@+id/lupa_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/medbooks_30dp"
+                        android:layout_marginRight="@dimen/medbooks_30dp"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/medbooks_10dp"
+                        android:paddingTop="@dimen/medbooks_7dp"
+                        android:text="Lupa kata sandi ?"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medbooks_12dp" />
+                    <Button
+                        android:id="@+id/login_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/medbooks_50dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/selector_btn_brown"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/medbooks_10dp"
+                        android:paddingLeft="@dimen/medbooks_40dp"
+                        android:paddingRight="@dimen/medbooks_40dp"
+                        android:paddingTop="@dimen/medbooks_10dp"
+                        android:text="Masuk"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/medbooks_14dp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
