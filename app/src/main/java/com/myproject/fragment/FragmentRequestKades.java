@@ -149,6 +149,7 @@ public class FragmentRequestKades extends BaseFragment {
     private void getAllRequest(){
         RequestJenisSurat model = new RequestJenisSurat();
         model.setMethod("reqAllSurat");
+
         model.setNik_penduduk(accountEntity.getNik());
         list = new ArrayList<>();
         adapter = new AdapterRequestSurat(getActivity(), list, new MyAdapterListener());
