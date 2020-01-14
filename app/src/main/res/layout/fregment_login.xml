@@ -141,7 +141,7 @@
                             android:textSize="@dimen/medbooks_14dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
-                    <TextView
+                    <!--<TextView
                         android:id="@+id/lupa_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -152,12 +152,12 @@
                         android:paddingTop="@dimen/medbooks_7dp"
                         android:text="Lupa kata sandi ?"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/medbooks_12dp" />
+                        android:textSize="@dimen/medbooks_12dp" />-->
                     <Button
                         android:id="@+id/login_btn"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/medbooks_50dp"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="@dimen/medbooks_20dp"
                         android:background="@drawable/selector_btn_brown"
                         android:gravity="center"
                         android:paddingBottom="@dimen/medbooks_10dp"

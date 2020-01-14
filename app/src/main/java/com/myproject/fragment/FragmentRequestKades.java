@@ -32,7 +32,7 @@ import com.myproject.util.DownloadTask;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentPengumuman extends BaseFragment {
+public class FragmentRequestKades extends BaseFragment {
     private String mParam1;
     private String mParam2;
     private static final String ARG_PARAM1 = "param1";
@@ -52,14 +52,14 @@ public class FragmentPengumuman extends BaseFragment {
 
     ProgressDialog mProgressDialog;
 
-    public FragmentPengumuman() {}
+    public FragmentRequestKades() {}
 
-    public static FragmentPengumuman newInstance() {
+    public static FragmentRequestKades newInstance() {
         return newInstance("","");
     }
 
-    public static FragmentPengumuman newInstance(String param1, String param2) {
-        FragmentPengumuman fragment = new FragmentPengumuman();
+    public static FragmentRequestKades newInstance(String param1, String param2) {
+        FragmentRequestKades fragment = new FragmentRequestKades();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

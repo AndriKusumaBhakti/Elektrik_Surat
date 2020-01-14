@@ -11,8 +11,6 @@ import com.myproject.activity.DashboardActivity;
 import com.myproject.activity.DashboardKepalaDesa;
 import com.myproject.aplication.APP;
 import com.myproject.aplication.Preference;
-import com.myproject.base.OnActionbarListener;
-import com.myproject.fragment.FragmentPengumuman;
 import com.myproject.fragment.LoginFragment;
 
 public class StartActivity extends BaseActivity {

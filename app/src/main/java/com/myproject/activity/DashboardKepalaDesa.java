@@ -25,7 +25,7 @@ import com.myproject.aplication.Preference;
 import com.myproject.database.Account;
 import com.myproject.database.AccountEntity;
 import com.myproject.fragment.BaseFragment;
-import com.myproject.fragment.FragmentPengumuman;
+import com.myproject.fragment.FragmentRequestKades;
 import com.myproject.fragment.FragmentScanQr;
 import com.myproject.fragment.FragmentSettingAkun;
 import com.myproject.fragment.LoadingDialog;
@@ -68,7 +68,7 @@ public class DashboardKepalaDesa extends BaseActivity {
             isFromPushNotif = getIntent().getExtras().getBoolean(IS_FROM_PUSH_NOTIF);
             notifModelName = getIntent().getExtras().getString(PUSH_NOTIF_MODEL_NAME);
             if (notifModelName != null && notifModelName.contains("TEST") && isFromPushNotif) {
-                replaceFragmentwithTag(R.id.container, FragmentPengumuman.newInstance(), false, "HOME");
+                replaceFragmentwithTag(R.id.container, FragmentRequestKades.newInstance(), false, "HOME");
             }
         }
     }
@@ -96,12 +96,12 @@ public class DashboardKepalaDesa extends BaseActivity {
         log_out = (LinearLayout) findViewById(R.id.log_out);
         setActionBarTitle("Request Surat");
         navigationView.getMenu().getItem(1).setChecked(true);
-        replaceFragmentwithTag(R.id.container, FragmentPengumuman.newInstance(), false, "Beranda");
+        replaceFragmentwithTag(R.id.container, FragmentRequestKades.newInstance(), false, "Beranda");
         nav_header_imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navigationView.getMenu().getItem(1).setChecked(true);
-                replaceFragmentwithTag(R.id.container, FragmentPengumuman.newInstance(), false, "Beranda");
+                replaceFragmentwithTag(R.id.container, FragmentRequestKades.newInstance(), false, "Beranda");
                 drawer.closeDrawer(GravityCompat.START);
             }
         });
@@ -139,7 +139,7 @@ public class DashboardKepalaDesa extends BaseActivity {
                     item.setChecked(true);
                     navIndex = 1;
                     setActionBarTitle("Request Surat");
-                    replaceFragmentwithTag(R.id.container, FragmentPengumuman.newInstance(), false, "Request Surat");
+                    replaceFragmentwithTag(R.id.container, FragmentRequestKades.newInstance(), false, "Request Surat");
                 }else if (id == R.id.setting_account) {
                     item.setChecked(true);
                     navIndex = 2;
