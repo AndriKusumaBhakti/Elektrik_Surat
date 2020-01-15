@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import com.myproject.R;
+import com.myproject.aplication.APP;
 import com.myproject.model.ModelResponse;
 import com.myproject.model.SendRequestIsi;
 import com.myproject.model.request.RequestAddSurat;
@@ -57,9 +58,12 @@ public abstract class TaskCreateSurat extends AsyncTask<SendRequestIsi, Void, Bo
         multipartTypedOutput.addPart("method", new TypedString(StringUtil.checkNullString(request.getMethod())));
         multipartTypedOutput.addPart("nik_penduduk", new TypedString(StringUtil.checkNullString(request.getNik_penduduk())));
         multipartTypedOutput.addPart("idjenissurat", new TypedString(StringUtil.checkNullString(request.getIdjenissurat())));
-        if (request.getValue().size()>0){
-            for (int i = 0; i<request.getValue().size(); i++){
-                multipartTypedOutput.addPart(String.valueOf(request.getValue().get(i).keySet()), new TypedString(StringUtil.checkNullString(String.valueOf(request.getValue().get(i).get(request.getValue().get(i).keySet())))));
+        if (request.getValue()!= null) {
+            if (request.getValue().size() > 0) {
+                for (int i = 0; i < request.getValue().size(); i++) {
+                    String name = String.valueOf(request.getValue().get(i).keySet()).substring(1, String.valueOf(request.getValue().get(i).keySet()).length()-1);
+                    multipartTypedOutput.addPart(name, new TypedString(StringUtil.checkNullString(String.valueOf(request.getValue().get(i).get(name)))));
+                }
             }
         }
         return multipartTypedOutput;

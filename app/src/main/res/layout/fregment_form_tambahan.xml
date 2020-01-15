@@ -1292,6 +1292,7 @@
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="@dimen/medbooks_16dp"
+                    android:layout_marginBottom="@dimen/medbooks_10dp"
                     android:visibility="visible" />
             </LinearLayout>
         </ScrollView>

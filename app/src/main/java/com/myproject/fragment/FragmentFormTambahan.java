@@ -218,7 +218,7 @@ public class FragmentFormTambahan extends BaseFragment {
                 sit.setVisibility(View.VISIBLE);
                 break;
             case "skkem":
-                sit.setVisibility(View.VISIBLE);
+                skkem.setVisibility(View.VISIBLE);
                 break;
             case "skkk":
                 skkk.setVisibility(View.VISIBLE);
@@ -734,7 +734,7 @@ public class FragmentFormTambahan extends BaseFragment {
                 calenderTgl_lhr_psg.set(Calendar.YEAR, year);
                 calenderTgl_lhr_psg.set(Calendar.MONTH, monthOfYear);
                 calenderTgl_lhr_psg.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                tgl_lhr_psg.setText(String.valueOf(calenderTgl_lhr_psg.getTime()));
+                tgl_lhr_psg.setText(sdf.format(calenderTgl_lhr_psg.getTime()));
             }
         };
         tgl_lhr_psg.setOnClickListener(new View.OnClickListener() {
