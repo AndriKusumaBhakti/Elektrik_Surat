@@ -678,7 +678,7 @@ public class FragmentFormTambahan extends BaseFragment {
                 caalendarTgl_benar.set(Calendar.YEAR, year);
                 caalendarTgl_benar.set(Calendar.MONTH, monthOfYear);
                 caalendarTgl_benar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                tgl_benar.setText(sdf.format(caalendarTgl_benar));
+                tgl_benar.setText(sdf.format(caalendarTgl_benar.getTime()));
             }
         };
         tgl_benar.setOnClickListener(new View.OnClickListener() {
@@ -697,7 +697,7 @@ public class FragmentFormTambahan extends BaseFragment {
                 calenderTgl_meninggal.set(Calendar.YEAR, year);
                 calenderTgl_meninggal.set(Calendar.MONTH, monthOfYear);
                 calenderTgl_meninggal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                tgl_meninggal.setText(sdf.format(calenderTgl_meninggal));
+                tgl_meninggal.setText(sdf.format(calenderTgl_meninggal.getTime()));
             }
         };
         tgl_meninggal.setOnClickListener(new View.OnClickListener() {
@@ -715,7 +715,7 @@ public class FragmentFormTambahan extends BaseFragment {
                 calenderTgl_nikah_psg.set(Calendar.YEAR, year);
                 calenderTgl_nikah_psg.set(Calendar.MONTH, monthOfYear);
                 calenderTgl_nikah_psg.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                tgl_nikah_psg.setText(sdf.format(calenderTgl_nikah_psg));
+                tgl_nikah_psg.setText(sdf.format(calenderTgl_nikah_psg.getTime()));
             }
         };
         tgl_nikah_psg.setOnClickListener(new View.OnClickListener() {
@@ -734,7 +734,7 @@ public class FragmentFormTambahan extends BaseFragment {
                 calenderTgl_lhr_psg.set(Calendar.YEAR, year);
                 calenderTgl_lhr_psg.set(Calendar.MONTH, monthOfYear);
                 calenderTgl_lhr_psg.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                tgl_lhr_psg.setText(sdf.format(calenderTgl_lhr_psg));
+                tgl_lhr_psg.setText(String.valueOf(calenderTgl_lhr_psg.getTime()));
             }
         };
         tgl_lhr_psg.setOnClickListener(new View.OnClickListener() {
@@ -745,6 +745,7 @@ public class FragmentFormTambahan extends BaseFragment {
                         calenderTgl_lhr_psg.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
         timeJam_nikah_psg = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {

@@ -261,7 +261,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Activity
     public void changeHomeToolbarBackground(boolean change) {
         if (toolbarBackground != null) {
             if (change) {
-                layoutBar.setBackgroundColor(getResources().getColor(R.color.google_green));
+                layoutBar.setBackgroundColor(getResources().getColor(R.color.google_blue));
             }
             else {
                 layoutBar.setBackgroundColor(getResources().getColor(R.color.white));
