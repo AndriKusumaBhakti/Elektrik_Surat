@@ -57,6 +57,11 @@ public abstract class TaskCreateSurat extends AsyncTask<SendRequestIsi, Void, Bo
         multipartTypedOutput.addPart("method", new TypedString(StringUtil.checkNullString(request.getMethod())));
         multipartTypedOutput.addPart("nik_penduduk", new TypedString(StringUtil.checkNullString(request.getNik_penduduk())));
         multipartTypedOutput.addPart("idjenissurat", new TypedString(StringUtil.checkNullString(request.getIdjenissurat())));
+        if (request.getValue().size()>0){
+            for (int i = 0; i<request.getValue().size(); i++){
+                multipartTypedOutput.addPart(String.valueOf(request.getValue().get(i).keySet()), new TypedString(StringUtil.checkNullString(String.valueOf(request.getValue().get(i).get(request.getValue().get(i).keySet())))));
+            }
+        }
         return multipartTypedOutput;
     }
 

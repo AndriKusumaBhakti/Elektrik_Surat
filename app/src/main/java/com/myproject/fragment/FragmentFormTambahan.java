@@ -23,7 +23,9 @@ import com.myproject.model.ModelResponse;
 import com.myproject.model.SendRequestIsi;
 import com.myproject.model.request.RequestAddSurat;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 
 public class FragmentFormTambahan extends BaseFragment {
@@ -550,7 +552,111 @@ public class FragmentFormTambahan extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (validasiForm()){
-                    sendData();
+                    ArrayList<HashMap<String, String>> data = new ArrayList<>();
+                    HashMap<String, String> result =  new HashMap<>();
+                    if (psik.getVisibility() == View.VISIBLE){
+                        result.put("nama_acara", nama_acara.getText().toString().trim());
+                        data.add(result);
+                    }else if (sib.getVisibility() == View.VISIBLE){
+                        result.put("tempat_kerja", tmp_kerja.getText().toString().trim());
+                        data.add(result);
+                    }else if (sktm.getVisibility() == View.VISIBLE){
+                        result.put("anak_dari", anak_dari.getText().toString().trim());
+                        data.add(result);
+                    }else if (skbna.getVisibility() == View.VISIBLE){
+                        result.put("nama_benar", nama_benar.getText().toString().trim());
+                        data.add(result);
+                    }else if (skbni.getVisibility() == View.VISIBLE){
+                        result.put("nik_benar", nik_benar.getText().toString().trim());
+                        data.add(result);
+                    }else if (skbtl.getVisibility() == View.VISIBLE){
+                        result.put("anak_dari", anak_dari2.getText().toString().trim());
+                        data.add(result);
+                        result.put("tgl_benar", tgl_benar.getText().toString().trim());
+                        data.add(result);
+                    }else if (sit.getVisibility() == View.VISIBLE){
+                        result.put("nama_pondok", nama_pondok.getText().toString().trim());
+                        data.add(result);
+                        result.put("alasan", alasan.getText().toString().trim());
+                        data.add(result);
+                    }else if (skkem.getVisibility() == View.VISIBLE){
+                        result.put("nik_meninggal", nik_meninggal.getText().toString().trim());
+                        data.add(result);
+                        result.put("hari_mati", hari_meninggal.getText().toString().trim());
+                        data.add(result);
+                        result.put("tgl_mati", tgl_meninggal.getText().toString().trim());
+                        data.add(result);
+                        result.put("bertempat", tmp_meninggal.getText().toString().trim());
+                        data.add(result);
+                        result.put("penyebab", penyebab.getText().toString().trim());
+                        data.add(result);
+                        result.put("hubungan_pelapor", hub_pelapor.getText().toString().trim());
+                        data.add(result);
+                    }else if (skkk.getVisibility() == View.VISIBLE){
+                        result.put("atas_nama", atas_nama.getText().toString().trim());
+                        data.add(result);
+                        result.put("jenis_merk", jenis_merk.getText().toString().trim());
+                        data.add(result);
+                        result.put("type", tipe.getText().toString().trim());
+                        data.add(result);
+                        result.put("tahun", tahun.getText().toString().trim());
+                        data.add(result);
+                        result.put("tahun_pembuatan", tahun_buat.getText().toString().trim());
+                        data.add(result);
+                        result.put("no_mesin", no_mesin.getText().toString().trim());
+                        data.add(result);
+                        result.put("no_rangka", no_rangka.getText().toString().trim());
+                        data.add(result);
+                        result.put("no_polisi", no_polisi.getText().toString().trim());
+                        data.add(result);
+                    }else if (skpot.getVisibility() == View.VISIBLE){
+                        result.put("nama_anak", nama_anak.getText().toString().trim());
+                        data.add(result);
+                        result.put("nik_anak", nik_anak.getText().toString().trim());
+                        data.add(result);
+                        result.put("asal_sekolah", asal_sklah.getText().toString().trim());
+                        data.add(result);
+                        result.put("penghasilan", penghasilan.getText().toString().trim());
+                        data.add(result);
+                        result.put("kampus_bersangkutan", kmps_bersangkutan.getText().toString().trim());
+                        data.add(result);
+                    }else if (skpn.getVisibility() == View.VISIBLE){
+                        result.put("bin_binti", bin_binti.getText().toString().trim());
+                        data.add(result);
+                        result.put("ayah", ayah.getText().toString().trim());
+                        data.add(result);
+                        result.put("ibu", ibu.getText().toString().trim());
+                        data.add(result);
+                        result.put("nama_pasangan", nama_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("jenis_kelamin_pasangan", jk_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("tempat_lahir_pasangan", tmp_lhr_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("tanggal_lahir_pasangan", tgl_lhr_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("kewarganegaraan_pasangan", kwg_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("pekerjaan_pasangan", pkerjaan_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("bin_binti_pasangan", bin_binti_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("alamat_penduduk_pasangan", alamat_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("ayah_pasangan", ayah_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("ibu_pasangan", ibu_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("tgl_nikah", tgl_nikah_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("jam_nikah", jam_nikah_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("wali_nikah", wali_nkh_psg.getText().toString().trim());
+                        data.add(result);
+                        result.put("mas_kawin", mas_kawin_psg.getText().toString().trim());
+                        data.add(result);
+                    }
+                    sendData(data);
                 }else{
                     getBaseActivity().showAlertDialog("Pesan", "Data tidak boleh ada yang kosong");
                 }
@@ -586,10 +692,14 @@ public class FragmentFormTambahan extends BaseFragment {
         return R.layout.fregment_form_tambahan;
     }
 
-    private void sendData(){
+    private void sendData(ArrayList<HashMap<String, String>> data){
         LoadingDialog loading = new LoadingDialog();
         loading.show(getBaseActivity().getFragmentManager(), DIALOG_FRAGMENT_FLAG);
         SendRequestIsi surat = new SendRequestIsi();
+        surat.setMethod("createSurat");
+        surat.setIdjenissurat(id_surat);
+        surat.setNik_penduduk(String.valueOf(accountEntity.getNik()));
+        surat.setValue(data);
 
         TaskCreateSurat task = new TaskCreateSurat(getBaseActivity()) {
             @Override
