@@ -32,10 +32,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/nama_acara_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/nama_acara"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -72,10 +74,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tmp_kerja_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/tmp_kerja"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -112,10 +116,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/anak_dari_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/anak_dari"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -152,10 +158,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/nama_benar_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/nama_benar"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -192,10 +200,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/nik_benar_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/nik_benar"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/medbooks_50dp"
                                 android:background="@drawable/form_input"
@@ -232,10 +242,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/anak_dari2"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/anak_dari2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -255,6 +267,7 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <TextView
+                            android:id="@+id/tgl_benar"
                             android:layout_marginTop="@dimen/medbooks_5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -284,10 +297,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/nama_pondok_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/nama_pondok"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -307,10 +322,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/alasan_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/alasan"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -347,10 +364,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/nik_meninggal_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/nik_meninggal"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/medbooks_50dp"
                                 android:background="@drawable/form_input"
@@ -370,10 +389,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/hari_meninggal_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/hari_meninggal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -382,7 +403,7 @@
                                 android:ems="10"
                                 android:padding="@dimen/medbooks_10dp"
                                 android:gravity="top|left"
-                                android:hint="Hari mati"
+                                android:hint="Hari meninggal"
                                 android:overScrollMode="always"
                                 android:scrollbarStyle="insideInset"
                                 android:scrollbars="vertical"
@@ -393,22 +414,25 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <TextView
+                            android:id="@+id/tgl_meninggal"
                             android:layout_marginTop="@dimen/medbooks_5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/calender"
                             android:background="@drawable/form_input"
-                            android:text="Tanggal mati"
+                            android:text="Tanggal meninggal"
                             android:paddingLeft="@dimen/medbooks_5dp"
                             android:drawablePadding="@dimen/medbooks_5dp"
                             android:paddingBottom="@dimen/medbooks_15dp"
                             android:paddingTop="@dimen/medbooks_15dp"
                             android:textSize="@dimen/medbooks_14dp"/>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tmp_meninggal_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/tmp_meninggal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -417,7 +441,7 @@
                                 android:ems="10"
                                 android:padding="@dimen/medbooks_10dp"
                                 android:gravity="top|left"
-                                android:hint="Bertempat"
+                                android:hint="Tempat meninggal"
                                 android:overScrollMode="always"
                                 android:scrollbarStyle="insideInset"
                                 android:scrollbars="vertical"
@@ -428,10 +452,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/penyebab_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/penyebab"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -451,10 +477,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/hub_pelapor_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/hub_pelapor"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -491,10 +519,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/atas_nama_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/atas_nama"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -514,10 +544,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/jenis_merk_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/jenis_merk"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -537,10 +569,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tipe_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/tipe"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -560,10 +594,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tahun_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/tahun"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -583,10 +619,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tahun_buat_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/tahun_buat"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -606,10 +644,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/no_mesin_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/no_mesin"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -629,10 +669,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/no_rangka_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/no_rangka"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -652,10 +694,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/no_polisi_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/no_polisi"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -692,10 +736,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/nama_anak_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/nama_anak"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -715,10 +761,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/nik_anak_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/nik_anak"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/medbooks_50dp"
                                 android:background="@drawable/form_input"
@@ -738,10 +786,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/asal_sklah_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/asal_sklah"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -761,10 +811,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/penghasilan_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/penghasilan"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/medbooks_50dp"
                                 android:background="@drawable/form_input"
@@ -784,10 +836,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/kmps_bersangkutan_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/kmps_bersangkutan"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -824,10 +878,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/bin_binti_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/bin_binti"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -847,10 +903,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ayah_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/ayah"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -870,10 +928,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ibu_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/ibu"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -901,10 +961,12 @@
                             android:paddingLeft="@dimen/medbooks_5dp"
                             android:textSize="@dimen/medbooks_14dp"/>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/nama_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/nama_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -924,10 +986,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/jk_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/jk_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -947,10 +1011,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tmp_lhr_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/tmp_lhr_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -970,6 +1036,7 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <TextView
+                            android:id="@+id/tgl_lhr_psg"
                             android:layout_marginTop="@dimen/medbooks_5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -982,10 +1049,12 @@
                             android:paddingTop="@dimen/medbooks_15dp"
                             android:textSize="@dimen/medbooks_14dp"/>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/kwg_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/kwg_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -1005,10 +1074,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/pkerjaan_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/pkerjaan_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -1028,10 +1099,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/bin_binti_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/bin_binti_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -1051,10 +1124,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/alamat_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/alamat_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -1074,10 +1149,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ayah_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/ayah_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -1097,10 +1174,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ibu_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/ibu_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -1120,6 +1199,7 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <TextView
+                            android:id="@+id/tgl_nikah_psg"
                             android:layout_marginTop="@dimen/medbooks_5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1132,6 +1212,7 @@
                             android:paddingTop="@dimen/medbooks_15dp"
                             android:textSize="@dimen/medbooks_14dp"/>
                         <TextView
+                            android:id="@+id/jam_nikah_psg"
                             android:layout_marginTop="@dimen/medbooks_5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1144,10 +1225,12 @@
                             android:paddingTop="@dimen/medbooks_15dp"
                             android:textSize="@dimen/medbooks_14dp"/>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/wali_nkh_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/wali_nkh_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"
@@ -1167,10 +1250,12 @@
                                 android:scrollHorizontally="false"/>
                         </com.google.android.material.textfield.TextInputLayout>
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/mas_kawin_psg_"
                             android:layout_width="match_parent"
                             android:layout_marginBottom="@dimen/medbooks_5dp"
                             android:layout_height="wrap_content">
                             <EditText
+                                android:id="@+id/mas_kawin_psg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/form_input"

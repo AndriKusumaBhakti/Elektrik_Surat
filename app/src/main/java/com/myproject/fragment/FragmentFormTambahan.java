@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.myproject.R;
 import com.myproject.api.TaskCreateSurat;
 import com.myproject.aplication.APP;
@@ -17,6 +20,7 @@ import com.myproject.base.OnActionbarListener;
 import com.myproject.database.Account;
 import com.myproject.database.AccountEntity;
 import com.myproject.model.ModelResponse;
+import com.myproject.model.SendRequestIsi;
 import com.myproject.model.request.RequestAddSurat;
 
 import java.util.Calendar;
@@ -37,6 +41,17 @@ public class FragmentFormTambahan extends BaseFragment {
     private String key, id_surat;
     Calendar myCalendar;
     DatePickerDialog.OnDateSetListener date;
+    EditText nama_acara, tmp_kerja, anak_dari, nama_benar, nik_benar, anak_dari2,
+            nama_pondok, alasan, nik_meninggal, hari_meninggal, tmp_meninggal, penyebab, hub_pelapor
+            , atas_nama, jenis_merk, tipe, tahun, tahun_buat, no_mesin, no_rangka, no_polisi, nama_anak, nik_anak
+            , asal_sklah, penghasilan, kmps_bersangkutan, bin_binti, ayah, ibu, kwg_psg, pkerjaan_psg, bin_binti_psg
+            , alamat_psg, ayah_psg, ibu_psg, wali_nkh_psg, mas_kawin_psg, nama_psg, jk_psg, tmp_lhr_psg;
+    TextInputLayout nama_acara_, tmp_kerja_, anak_dari_, nama_benar_, nik_benar_, anak_dari2_,
+            nama_pondok_, alasan_, nik_meninggal_, hari_meninggal_, tmp_meninggal_, penyebab_, hub_pelapor_
+            , atas_nama_, jenis_merk_, tipe_, tahun_, tahun_buat_, no_mesin_, no_rangka_, no_polisi_,
+            nama_anak_, nik_anak_, asal_sklah_, penghasilan_, kmps_bersangkutan_, bin_binti_, ayah_, ibu_, kwg_psg_
+            , pkerjaan_psg_, bin_binti_psg_, alamat_psg_, ayah_psg_, ibu_psg_, wali_nkh_psg_, mas_kawin_psg_, nama_psg_, jk_psg_, tmp_lhr_psg_;
+    TextView tgl_benar, tgl_meninggal, tgl_nikah_psg, jam_nikah_psg, tgl_lhr_psg;
 
     public FragmentFormTambahan() {}
 
@@ -81,6 +96,53 @@ public class FragmentFormTambahan extends BaseFragment {
         skpot = (CardView) view.findViewById(R.id.skpot);
         skpn = (CardView) view.findViewById(R.id.skpn);
         btn_simpan = (Button) view.findViewById(R.id.btn_simpan);
+
+        nama_acara = (EditText) view.findViewById(R.id.nama_acara);
+        tmp_kerja = (EditText) view.findViewById(R.id.tmp_kerja);
+        anak_dari = (EditText) view.findViewById(R.id.anak_dari);
+        nama_benar = (EditText) view.findViewById(R.id.nama_benar);
+        nik_benar = (EditText) view.findViewById(R.id.nik_benar);
+        anak_dari2 = (EditText) view.findViewById(R.id.anak_dari2);
+        nama_pondok = (EditText) view.findViewById(R.id.nama_pondok);
+        alasan = (EditText) view.findViewById(R.id.alasan);
+        nik_meninggal = (EditText) view.findViewById(R.id.nik_meninggal);
+        hari_meninggal = (EditText) view.findViewById(R.id.hari_meninggal);
+        tmp_meninggal = (EditText) view.findViewById(R.id.tmp_meninggal);
+        penyebab = (EditText) view.findViewById(R.id.penyebab);
+        hub_pelapor = (EditText) view.findViewById(R.id.hub_pelapor);
+        atas_nama = (EditText) view.findViewById(R.id.atas_nama);
+        jenis_merk = (EditText) view.findViewById(R.id.jenis_merk);
+        tipe = (EditText) view.findViewById(R.id.tipe);
+        tahun = (EditText) view.findViewById(R.id.tahun);
+        tahun_buat = (EditText) view.findViewById(R.id.tahun_buat);
+        no_mesin = (EditText) view.findViewById(R.id.no_mesin);
+        no_rangka = (EditText) view.findViewById(R.id.no_rangka);
+        no_polisi = (EditText) view.findViewById(R.id.no_polisi);
+        nama_anak = (EditText) view.findViewById(R.id.nama_anak);
+        nik_anak = (EditText) view.findViewById(R.id.nik_anak);
+        asal_sklah = (EditText) view.findViewById(R.id.asal_sklah);
+        penghasilan = (EditText) view.findViewById(R.id.penghasilan);
+        kmps_bersangkutan = (EditText) view.findViewById(R.id.kmps_bersangkutan);
+        bin_binti = (EditText) view.findViewById(R.id.bin_binti);
+        ayah = (EditText) view.findViewById(R.id.ayah);
+        ibu = (EditText) view.findViewById(R.id.ibu);
+        kwg_psg = (EditText) view.findViewById(R.id.kwg_psg);
+        pkerjaan_psg = (EditText) view.findViewById(R.id.pkerjaan_psg);
+        bin_binti_psg = (EditText) view.findViewById(R.id.bin_binti_psg);
+        alamat_psg = (EditText) view.findViewById(R.id.alamat_psg);
+        ayah_psg = (EditText) view.findViewById(R.id.ayah_psg);
+        ibu_psg = (EditText) view.findViewById(R.id.ibu_psg);
+        wali_nkh_psg = (EditText) view.findViewById(R.id.wali_nkh_psg);
+        mas_kawin_psg = (EditText) view.findViewById(R.id.mas_kawin_psg);
+        nama_psg = (EditText) view.findViewById(R.id.nama_psg);
+        jk_psg = (EditText) view.findViewById(R.id.jk_psg);
+        tmp_lhr_psg = (EditText) view.findViewById(R.id.tmp_lhr_psg);
+
+        tgl_benar = (TextView) view.findViewById(R.id.tgl_benar);
+        tgl_meninggal = (TextView) view.findViewById(R.id.tgl_meninggal);
+        tgl_nikah_psg = (TextView) view.findViewById(R.id.tgl_nikah_psg);
+        jam_nikah_psg = (TextView) view.findViewById(R.id.jam_nikah_psg);
+        tgl_lhr_psg = (TextView) view.findViewById(R.id.tgl_lhr_psg);
         switch (key){
             case "psik":
                 psik.setVisibility(View.VISIBLE);
@@ -175,7 +237,7 @@ public class FragmentFormTambahan extends BaseFragment {
     private void sendData(){
         LoadingDialog loading = new LoadingDialog();
         loading.show(getBaseActivity().getFragmentManager(), DIALOG_FRAGMENT_FLAG);
-        RequestAddSurat surat = new RequestAddSurat();
+        SendRequestIsi surat = new SendRequestIsi();
 
         TaskCreateSurat task = new TaskCreateSurat(getBaseActivity()) {
             @Override

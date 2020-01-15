@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 
 import com.myproject.R;
 import com.myproject.model.ModelResponse;
+import com.myproject.model.SendRequestIsi;
 import com.myproject.model.request.RequestAddSurat;
 import com.myproject.model.request.RequestJenisSurat;
 import com.myproject.model.response.ResponseJenisSurat;
@@ -15,7 +16,7 @@ import retrofit.RetrofitError;
 import retrofit.mime.MultipartTypedOutput;
 import retrofit.mime.TypedString;
 
-public abstract class TaskCreateSurat extends AsyncTask<RequestAddSurat, Void, Boolean> {
+public abstract class TaskCreateSurat extends AsyncTask<SendRequestIsi, Void, Boolean> {
     private Context context;
     private ModelResponse response;
     private RestAdapter restAdapter;
@@ -32,9 +33,9 @@ public abstract class TaskCreateSurat extends AsyncTask<RequestAddSurat, Void, B
     }
 
     @Override
-    protected Boolean doInBackground(RequestAddSurat... requests) {
+    protected Boolean doInBackground(SendRequestIsi... requests) {
         MedicAPI methods = restAdapter.create(MedicAPI.class);
-        RequestAddSurat request = requests[0];
+        SendRequestIsi request = requests[0];
         MultipartTypedOutput output = convertData(request);
         try{
             response = methods.createSurat(output);
@@ -51,14 +52,11 @@ public abstract class TaskCreateSurat extends AsyncTask<RequestAddSurat, Void, B
         return true;
     }
 
-    private MultipartTypedOutput convertData(RequestAddSurat request){
+    private MultipartTypedOutput convertData(SendRequestIsi request){
         MultipartTypedOutput multipartTypedOutput = new MultipartTypedOutput();
         multipartTypedOutput.addPart("method", new TypedString(StringUtil.checkNullString(request.getMethod())));
         multipartTypedOutput.addPart("nik_penduduk", new TypedString(StringUtil.checkNullString(request.getNik_penduduk())));
-        multipartTypedOutput.addPart("idjenissurat", new TypedString(StringUtil.checkNullString(request.getId_jenis_surat())));
-        multipartTypedOutput.addPart("keperluan", new TypedString(StringUtil.checkNullString(request.getKeperluan())));
-        multipartTypedOutput.addPart("keterangan", new TypedString(StringUtil.checkNullString(request.getKeterangan())));
-        multipartTypedOutput.addPart("berlaku", new TypedString(StringUtil.checkNullString(request.getBerlaku())));
+        multipartTypedOutput.addPart("idjenissurat", new TypedString(StringUtil.checkNullString(request.getIdjenissurat())));
         return multipartTypedOutput;
     }
 
