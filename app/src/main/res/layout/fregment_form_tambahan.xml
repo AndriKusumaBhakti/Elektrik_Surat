@@ -1216,7 +1216,7 @@
                             android:layout_marginTop="@dimen/medbooks_5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/calender"
+                            android:drawableLeft="@drawable/icon_jam"
                             android:background="@drawable/form_input"
                             android:text="Jam nikah"
                             android:paddingLeft="@dimen/medbooks_5dp"

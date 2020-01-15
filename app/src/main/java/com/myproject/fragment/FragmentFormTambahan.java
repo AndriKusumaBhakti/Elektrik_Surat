@@ -1,6 +1,7 @@
 package com.myproject.fragment;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import androidx.cardview.widget.CardView;
 
@@ -23,10 +25,12 @@ import com.myproject.model.ModelResponse;
 import com.myproject.model.SendRequestIsi;
 import com.myproject.model.request.RequestAddSurat;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class FragmentFormTambahan extends BaseFragment {
     private String mParam1;
@@ -37,22 +41,27 @@ public class FragmentFormTambahan extends BaseFragment {
     private Account account;
     private List<AccountEntity> profiles;
     private AccountEntity accountEntity;
+    protected SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH);
 
     private CardView psik, sib, sktm, skbna, skbni, skbtl, sit, skkem, skkk, skpot, skpn;
     private Button btn_simpan;
     private String key, id_surat;
-    Calendar myCalendar;
-    DatePickerDialog.OnDateSetListener date;
+    Calendar caalendarTgl_benar, calenderTgl_meninggal, calenderTgl_nikah_psg, calenderTgl_lhr_psg;
+    DatePickerDialog.OnDateSetListener dateTgl_benar, dateTgl_meninggal, dateTgl_nikah_psg, dateTgl_lhr_psg;
+    TimePickerDialog.OnTimeSetListener timeJam_nikah_psg;
+
     EditText nama_acara, tmp_kerja, anak_dari, nama_benar, nik_benar, anak_dari2,
             nama_pondok, alasan, nik_meninggal, hari_meninggal, tmp_meninggal, penyebab, hub_pelapor
             , atas_nama, jenis_merk, tipe, tahun, tahun_buat, no_mesin, no_rangka, no_polisi, nama_anak, nik_anak
             , asal_sklah, penghasilan, kmps_bersangkutan, bin_binti, ayah, ibu, kwg_psg, pkerjaan_psg, bin_binti_psg
             , alamat_psg, ayah_psg, ibu_psg, wali_nkh_psg, mas_kawin_psg, nama_psg, jk_psg, tmp_lhr_psg;
+
     TextInputLayout nama_acara_, tmp_kerja_, anak_dari_, nama_benar_, nik_benar_, anak_dari2_,
             nama_pondok_, alasan_, nik_meninggal_, hari_meninggal_, tmp_meninggal_, penyebab_, hub_pelapor_
             , atas_nama_, jenis_merk_, tipe_, tahun_, tahun_buat_, no_mesin_, no_rangka_, no_polisi_,
             nama_anak_, nik_anak_, asal_sklah_, penghasilan_, kmps_bersangkutan_, bin_binti_, ayah_, ibu_, kwg_psg_
             , pkerjaan_psg_, bin_binti_psg_, alamat_psg_, ayah_psg_, ibu_psg_, wali_nkh_psg_, mas_kawin_psg_, nama_psg_, jk_psg_, tmp_lhr_psg_;
+
     TextView tgl_benar, tgl_meninggal, tgl_nikah_psg, jam_nikah_psg, tgl_lhr_psg;
 
     public FragmentFormTambahan() {}
@@ -662,15 +671,92 @@ public class FragmentFormTambahan extends BaseFragment {
                 }
             }
         });
-        myCalendar = Calendar.getInstance();
-        date = new DatePickerDialog.OnDateSetListener() {
+        caalendarTgl_benar = Calendar.getInstance();
+        dateTgl_benar = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                caalendarTgl_benar.set(Calendar.YEAR, year);
+                caalendarTgl_benar.set(Calendar.MONTH, monthOfYear);
+                caalendarTgl_benar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                tgl_benar.setText(sdf.format(caalendarTgl_benar));
             }
         };
+        tgl_benar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(getActivity(), dateTgl_benar, caalendarTgl_benar
+                        .get(Calendar.YEAR), caalendarTgl_benar.get(Calendar.MONTH),
+                        caalendarTgl_benar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        calenderTgl_meninggal = Calendar.getInstance();
+        dateTgl_meninggal = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                calenderTgl_meninggal.set(Calendar.YEAR, year);
+                calenderTgl_meninggal.set(Calendar.MONTH, monthOfYear);
+                calenderTgl_meninggal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                tgl_meninggal.setText(sdf.format(calenderTgl_meninggal));
+            }
+        };
+        tgl_meninggal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(getActivity(), dateTgl_meninggal, calenderTgl_meninggal
+                        .get(Calendar.YEAR), calenderTgl_meninggal.get(Calendar.MONTH),
+                        calenderTgl_meninggal.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+        calenderTgl_nikah_psg = Calendar.getInstance();
+        dateTgl_nikah_psg = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                calenderTgl_nikah_psg.set(Calendar.YEAR, year);
+                calenderTgl_nikah_psg.set(Calendar.MONTH, monthOfYear);
+                calenderTgl_nikah_psg.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                tgl_nikah_psg.setText(sdf.format(calenderTgl_nikah_psg));
+            }
+        };
+        tgl_nikah_psg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(getActivity(), dateTgl_nikah_psg, calenderTgl_nikah_psg
+                        .get(Calendar.YEAR), calenderTgl_nikah_psg.get(Calendar.MONTH),
+                        calenderTgl_nikah_psg.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        calenderTgl_lhr_psg = Calendar.getInstance();
+        dateTgl_lhr_psg = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                calenderTgl_lhr_psg.set(Calendar.YEAR, year);
+                calenderTgl_lhr_psg.set(Calendar.MONTH, monthOfYear);
+                calenderTgl_lhr_psg.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                tgl_lhr_psg.setText(sdf.format(calenderTgl_lhr_psg));
+            }
+        };
+        tgl_lhr_psg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(getActivity(), dateTgl_lhr_psg, calenderTgl_lhr_psg
+                        .get(Calendar.YEAR), calenderTgl_lhr_psg.get(Calendar.MONTH),
+                        calenderTgl_lhr_psg.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+        timeJam_nikah_psg = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                jam_nikah_psg.setText(String.valueOf(hourOfDay+":"+minute));
+            }
+        };
+        jam_nikah_psg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new TimePickerDialog(getActivity(), timeJam_nikah_psg, 00, 00, true).show();
+            }
+        });
     }
 
     @Override

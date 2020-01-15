@@ -28,6 +28,7 @@ import com.myproject.database.Account;
 import com.myproject.database.AccountEntity;
 import com.myproject.model.ModelJenisSurat;
 import com.myproject.model.ModelResponse;
+import com.myproject.model.SendRequestIsi;
 import com.myproject.model.request.RequestAddSurat;
 import com.myproject.model.request.RequestJenisSurat;
 import com.myproject.model.request.RequestSurat;
@@ -254,10 +255,10 @@ public class FragmentJenisSurat extends BaseFragment {
     }
 
     private void getSendData(String id_jenis_surat){
-        RequestAddSurat surat = new RequestAddSurat();
+        SendRequestIsi surat = new SendRequestIsi();
         surat.setMethod("createSurat");
-        surat.setId_jenis_surat(id_jenis_surat);
-        surat.setNik_penduduk(APP.getStringPref(getActivity(), Preference.NIK));
+        surat.setIdjenissurat(id_jenis_surat);
+        surat.setNik_penduduk(String.valueOf(accountEntity.getNik()));
         TaskCreateSurat task = new TaskCreateSurat(getBaseActivity()) {
             @Override
             protected void onSuccess(ModelResponse response) {
