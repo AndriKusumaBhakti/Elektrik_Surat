@@ -226,7 +226,13 @@ public class FragmentJenisSurat extends BaseFragment {
                             /*final DialogInput dialogInput = new DialogInput();
                             dialogInput.setTitleAndContent(FragmentJenisSurat.newInstance(), "Form tambahan", response.getResult(), item.getId_jenis_surat());
                             dialogInput.show(getBaseActivity().getFragmentManager(), DialogInput.class.getName());*/
-
+                            FragmentFormTambahan fragment = new FragmentFormTambahan();
+                            DashboardActivity dashboard = DashboardActivity.instance;
+                            Bundle bundle = new Bundle();
+                            bundle.putString("key", response.getKey());
+                            bundle.putString("id_surat", item.getId_jenis_surat());
+                            fragment.setArguments(bundle);
+                            dashboard.pushFragmentDashboard(fragment);
                         }else{
                             getSendData(item.getId_jenis_surat());
                         }

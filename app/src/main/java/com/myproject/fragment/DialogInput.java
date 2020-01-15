@@ -114,7 +114,6 @@ public class DialogInput extends DialogFragment {
                     myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                 }
-
             };
             for (int i = 0; i<this.content.size(); i++){
                 LinearLayout vDetail = new LinearLayout(getActivity());

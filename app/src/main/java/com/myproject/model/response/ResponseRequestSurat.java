@@ -7,6 +7,7 @@ public class ResponseRequestSurat implements Serializable {
     private Boolean status;
     private String message;
     private ArrayList<String> result;
+    private String key;
 
     public Boolean getStatus() {
         return status;
@@ -30,5 +31,13 @@ public class ResponseRequestSurat implements Serializable {
 
     public void setResult(ArrayList<String> result) {
         this.result = result;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

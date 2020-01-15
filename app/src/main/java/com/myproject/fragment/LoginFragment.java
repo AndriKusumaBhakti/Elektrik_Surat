@@ -36,7 +36,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener{
     private TextInputLayout login_label_password;
     private EditText login_input_username;
     private EditText login_input_password;
-    private TextView lupa_password;
+//    private TextView lupa_password;
     private Button login_btn;
     private boolean isEmail;
 
@@ -72,7 +72,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener{
         login_label_password = (TextInputLayout) view.findViewById(R.id.login_label_password);
         login_input_username = (EditText) view.findViewById(R.id.login_input_username);
         login_input_password = (EditText) view.findViewById(R.id.login_input_password);
-        lupa_password = (TextView) view.findViewById(R.id.lupa_password);
+//        lupa_password = (TextView) view.findViewById(R.id.lupa_password);
         login_btn = (Button) view.findViewById(R.id.login_btn);
     }
 
@@ -80,7 +80,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener{
     public void setUICallbacks() {
         login_btn.setOnClickListener(this);
         menu_right_btn.setOnClickListener(this);
-        lupa_password.setOnClickListener(this);
+//        lupa_password.setOnClickListener(this);
         login_input_username.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
