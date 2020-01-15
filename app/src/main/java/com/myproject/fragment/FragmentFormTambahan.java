@@ -224,37 +224,306 @@ public class FragmentFormTambahan extends BaseFragment {
     private Boolean validasiForm(){
         boolean status = true;
         if (psik.getVisibility() == View.VISIBLE){
-
+            if (nama_acara.getText().toString().isEmpty()) {
+                nama_acara_.setErrorEnabled(true);
+                nama_acara_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                nama_acara_.setError(null);
+            }
         }
         if (sib.getVisibility() == View.VISIBLE){
-
+            if (tmp_kerja.getText().toString().isEmpty()) {
+                tmp_kerja_.setErrorEnabled(true);
+                tmp_kerja_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                tmp_kerja_.setError(null);
+            }
         }
         if (sktm.getVisibility() == View.VISIBLE){
-
+            if (anak_dari.getText().toString().isEmpty()) {
+                anak_dari_.setErrorEnabled(true);
+                anak_dari_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                anak_dari_.setError(null);
+            }
         }
         if (skbna.getVisibility() == View.VISIBLE){
-
+            if (nama_benar.getText().toString().isEmpty()) {
+                nama_benar_.setErrorEnabled(true);
+                nama_benar_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                nama_benar_.setError(null);
+            }
         }
         if (skbni.getVisibility() == View.VISIBLE){
-
+            if (nik_benar.getText().toString().isEmpty()) {
+                nik_benar_.setErrorEnabled(true);
+                nik_benar_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                nik_benar_.setError(null);
+            }
         }
         if (skbtl.getVisibility() == View.VISIBLE){
-
+            if (anak_dari2.getText().toString().isEmpty()) {
+                anak_dari2_.setErrorEnabled(true);
+                anak_dari2_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                anak_dari2_.setError(null);
+            }
         }
         if (sit.getVisibility() == View.VISIBLE){
-
+            if (nama_pondok.getText().toString().isEmpty()) {
+                nama_pondok_.setErrorEnabled(true);
+                nama_pondok_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                nama_pondok_.setError(null);
+            }
+            if (alasan.getText().toString().isEmpty()) {
+                alasan_.setErrorEnabled(true);
+                alasan_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                alasan_.setError(null);
+            }
         }
         if (skkem.getVisibility() == View.VISIBLE){
-
+            if (nik_meninggal.getText().toString().isEmpty()) {
+                nik_meninggal_.setErrorEnabled(true);
+                nik_meninggal_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                nik_meninggal_.setError(null);
+            }
+            if (hari_meninggal.getText().toString().isEmpty()) {
+                hari_meninggal_.setErrorEnabled(true);
+                hari_meninggal_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                hari_meninggal_.setError(null);
+            }
+            if (tmp_meninggal.getText().toString().isEmpty()) {
+                tmp_meninggal_.setErrorEnabled(true);
+                tmp_meninggal_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                tmp_meninggal_.setError(null);
+            }
+            if (penyebab.getText().toString().isEmpty()) {
+                penyebab_.setErrorEnabled(true);
+                penyebab_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                penyebab_.setError(null);
+            }
+            if (hub_pelapor.getText().toString().isEmpty()) {
+                hub_pelapor_.setErrorEnabled(true);
+                hub_pelapor_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                hub_pelapor_.setError(null);
+            }
         }
         if (skkk.getVisibility() == View.VISIBLE){
-
+            if (atas_nama.getText().toString().isEmpty()) {
+                atas_nama_.setErrorEnabled(true);
+                atas_nama_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                atas_nama_.setError(null);
+            }
+            if (jenis_merk.getText().toString().isEmpty()) {
+                jenis_merk_.setErrorEnabled(true);
+                jenis_merk_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                jenis_merk_.setError(null);
+            }
+            if (tipe.getText().toString().isEmpty()) {
+                tipe_.setErrorEnabled(true);
+                tipe_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                tipe_.setError(null);
+            }
+            if (tahun.getText().toString().isEmpty()) {
+                tahun_.setErrorEnabled(true);
+                tahun_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                tahun_.setError(null);
+            }
+            if (tahun_buat.getText().toString().isEmpty()) {
+                tahun_buat_.setErrorEnabled(true);
+                tahun_buat_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                tahun_buat_.setError(null);
+            }
+            if (no_mesin.getText().toString().isEmpty()) {
+                no_mesin_.setErrorEnabled(true);
+                no_mesin_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                no_mesin_.setError(null);
+            }
+            if (no_rangka.getText().toString().isEmpty()) {
+                no_rangka_.setErrorEnabled(true);
+                no_rangka_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                no_rangka_.setError(null);
+            }
+            if (no_polisi.getText().toString().isEmpty()) {
+                no_polisi_.setErrorEnabled(true);
+                no_polisi_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                no_polisi_.setError(null);
+            }
         }
         if (skpot.getVisibility() == View.VISIBLE){
-
+            if (nama_anak.getText().toString().isEmpty()) {
+                nama_anak_.setErrorEnabled(true);
+                nama_anak_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                nama_anak_.setError(null);
+            }
+            if (nik_anak.getText().toString().isEmpty()) {
+                nik_anak_.setErrorEnabled(true);
+                nik_anak_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                nik_anak_.setError(null);
+            }
+            if (asal_sklah.getText().toString().isEmpty()) {
+                asal_sklah_.setErrorEnabled(true);
+                asal_sklah_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                asal_sklah_.setError(null);
+            }
+            if (penghasilan.getText().toString().isEmpty()) {
+                penghasilan_.setErrorEnabled(true);
+                penghasilan_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                penghasilan_.setError(null);
+            }
+            if (kmps_bersangkutan.getText().toString().isEmpty()) {
+                kmps_bersangkutan_.setErrorEnabled(true);
+                kmps_bersangkutan_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                kmps_bersangkutan_.setError(null);
+            }
         }
         if (skpn.getVisibility() == View.VISIBLE){
-
+            if (bin_binti.getText().toString().isEmpty()) {
+                bin_binti_.setErrorEnabled(true);
+                bin_binti_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                bin_binti_.setError(null);
+            }
+            if (ayah.getText().toString().isEmpty()) {
+                ayah_.setErrorEnabled(true);
+                ayah_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                ayah_.setError(null);
+            }
+            if (ibu.getText().toString().isEmpty()) {
+                ibu_.setErrorEnabled(true);
+                ibu_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                ibu_.setError(null);
+            }
+            if (nama_psg.getText().toString().isEmpty()) {
+                nama_psg_.setErrorEnabled(true);
+                nama_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                nama_psg_.setError(null);
+            }
+            if (jk_psg.getText().toString().isEmpty()) {
+                jk_psg_.setErrorEnabled(true);
+                jk_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                jk_psg_.setError(null);
+            }
+            if (tmp_lhr_psg.getText().toString().isEmpty()) {
+                tmp_lhr_psg_.setErrorEnabled(true);
+                tmp_lhr_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                tmp_lhr_psg_.setError(null);
+            }
+            if (kwg_psg.getText().toString().isEmpty()) {
+                kwg_psg_.setErrorEnabled(true);
+                kwg_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                kwg_psg_.setError(null);
+            }
+            if (pkerjaan_psg.getText().toString().isEmpty()) {
+                pkerjaan_psg_.setErrorEnabled(true);
+                pkerjaan_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                pkerjaan_psg_.setError(null);
+            }
+            if (bin_binti_psg.getText().toString().isEmpty()) {
+                bin_binti_psg_.setErrorEnabled(true);
+                bin_binti_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                bin_binti_psg_.setError(null);
+            }
+            if (alamat_psg.getText().toString().isEmpty()) {
+                alamat_psg_.setErrorEnabled(true);
+                alamat_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                alamat_psg_.setError(null);
+            }
+            if (ayah_psg.getText().toString().isEmpty()) {
+                ayah_psg_.setErrorEnabled(true);
+                ayah_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                ayah_psg_.setError(null);
+            }
+            if (ibu_psg.getText().toString().isEmpty()) {
+                ibu_psg_.setErrorEnabled(true);
+                ibu_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                ibu_psg_.setError(null);
+            }
+            if (wali_nkh_psg.getText().toString().isEmpty()) {
+                wali_nkh_psg_.setErrorEnabled(true);
+                wali_nkh_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                wali_nkh_psg_.setError(null);
+            }
+            if (mas_kawin_psg.getText().toString().isEmpty()) {
+                mas_kawin_psg_.setErrorEnabled(true);
+                mas_kawin_psg_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                mas_kawin_psg_.setError(null);
+            }
         }
         return status;
     }
