@@ -221,6 +221,44 @@ public class FragmentFormTambahan extends BaseFragment {
         }
     }
 
+    private Boolean validasiForm(){
+        boolean status = true;
+        if (psik.getVisibility() == View.VISIBLE){
+
+        }
+        if (sib.getVisibility() == View.VISIBLE){
+
+        }
+        if (sktm.getVisibility() == View.VISIBLE){
+
+        }
+        if (skbna.getVisibility() == View.VISIBLE){
+
+        }
+        if (skbni.getVisibility() == View.VISIBLE){
+
+        }
+        if (skbtl.getVisibility() == View.VISIBLE){
+
+        }
+        if (sit.getVisibility() == View.VISIBLE){
+
+        }
+        if (skkem.getVisibility() == View.VISIBLE){
+
+        }
+        if (skkk.getVisibility() == View.VISIBLE){
+
+        }
+        if (skpot.getVisibility() == View.VISIBLE){
+
+        }
+        if (skpn.getVisibility() == View.VISIBLE){
+
+        }
+        return status;
+    }
+
     @Override
     public void setUICallbacks() {
         getBaseActivity().setActionbarListener(new OnActionbarListener() {
@@ -242,7 +280,11 @@ public class FragmentFormTambahan extends BaseFragment {
         btn_simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendData();
+                if (validasiForm()){
+                    sendData();
+                }else{
+                    getBaseActivity().showAlertDialog("Pesan", "Data tidak boleh ada yang kosong");
+                }
             }
         });
         myCalendar = Calendar.getInstance();
