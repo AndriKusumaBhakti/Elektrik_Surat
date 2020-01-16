@@ -4,6 +4,7 @@ public class ModelLoginRequest {
     private String method;
     private String nik_penduduk;
     private String password;
+    private String registrasi_id;
 
     public String getMethod() {
         return method;
@@ -27,5 +28,13 @@ public class ModelLoginRequest {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRegistrasi_id() {
+        return registrasi_id;
+    }
+
+    public void setRegistrasi_id(String registrasi_id) {
+        this.registrasi_id = registrasi_id;
     }
 }

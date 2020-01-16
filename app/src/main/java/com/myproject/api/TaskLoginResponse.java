@@ -56,6 +56,7 @@ public abstract class TaskLoginResponse extends AsyncTask<ModelLoginRequest, Voi
         multipartTypedOutput.addPart("method", new TypedString(StringUtil.checkNullString(request.getMethod())));
         multipartTypedOutput.addPart("nik_penduduk", new TypedString(StringUtil.checkNullString(request.getNik_penduduk())));
         multipartTypedOutput.addPart("password", new TypedString(StringUtil.checkNullString(request.getPassword())));
+        multipartTypedOutput.addPart("registrasi_id", new TypedString(StringUtil.checkNullString(request.getRegistrasi_id())));
         return multipartTypedOutput;
     }
 

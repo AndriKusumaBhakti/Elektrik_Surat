@@ -147,6 +147,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener{
                 request.setMethod("login");
                 request.setNik_penduduk(String.valueOf(login_input_username.getText().toString()));
                 request.setPassword(String.valueOf(login_input_password.getText().toString()));
+                request.setRegistrasi_id(APP.getStringPref(getActivity(), Preference.ONE_SIGNAL_USER_ID));
 
                 TaskLoginResponse task = new TaskLoginResponse(getActivity()) {
                     @Override
