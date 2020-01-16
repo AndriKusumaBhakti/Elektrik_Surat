@@ -1,6 +1,8 @@
 package com.myproject.model.response;
 
-public class ModelPengguna {
+import java.io.Serializable;
+
+public class ModelPengguna implements Serializable {
     private String id_penduduk;
     private String nik_penduduk;
     private String nama_penduduk;

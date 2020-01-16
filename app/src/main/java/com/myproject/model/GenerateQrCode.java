@@ -5,9 +5,9 @@ import java.io.Serializable;
 public class GenerateQrCode implements Serializable {
     private String id_qrcode;
     private String nama_kades;
-    private String keperluan;
+    /*private String keperluan;
     private String keterangan;
-    private String berlaku;
+    private String berlaku;*/
 
     public String getId_qrcode() {
         return id_qrcode;
@@ -25,7 +25,7 @@ public class GenerateQrCode implements Serializable {
         this.nama_kades = nama_kades;
     }
 
-    public String getKeperluan() {
+    /*public String getKeperluan() {
         return keperluan;
     }
 
@@ -47,5 +47,5 @@ public class GenerateQrCode implements Serializable {
 
     public void setBerlaku(String berlaku) {
         this.berlaku = berlaku;
-    }
+    }*/
 }
