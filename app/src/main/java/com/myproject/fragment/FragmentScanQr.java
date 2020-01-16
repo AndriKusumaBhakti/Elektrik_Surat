@@ -44,6 +44,8 @@ public class FragmentScanQr extends BaseFragment{
     private ScrollView mainLayout;
     LoadingDialog loadingScan = new LoadingDialog();
     ProgressDialog mProgressDialog;
+    String link_ = null;
+    String nama_ = null;
 
     public FragmentScanQr() {}
 
@@ -108,6 +110,16 @@ public class FragmentScanQr extends BaseFragment{
             @Override
             public void onRight2IconClick() {
 
+            }
+        });
+        nama_surat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (link_ != null && nama_ != null) {
+                    downloadFileSurat(link_, nama_);
+                }else{
+                    getBaseActivity().showAlertDialog("Pesan", "Link surat tidak ditemukan");
+                }
             }
         });
     }
@@ -181,7 +193,7 @@ public class FragmentScanQr extends BaseFragment{
                             if (!StringUtil.checkNullString(response.getResult().getPenduduk().getKewarganegaraan()).isEmpty()){
                                 kwg.setText(response.getResult().getPenduduk().getKewarganegaraan());
                             }
-                            String ket = null;
+                            /*String ket = null;
                             if (!StringUtil.checkNullString(response.getResult().getQrcode().getKeperluan()).isEmpty()){
                                 ket = "Keperluan    : "+response.getResult().getQrcode().getKeperluan()+"\n";
                             }
@@ -203,8 +215,9 @@ public class FragmentScanQr extends BaseFragment{
                                     ket = ket + "Berlaku    : " + response.getResult().getQrcode().getBerlaku() + "\n";
                                 }
                             }
-                            keterangan.setText(ket);
-                            downloadFile(response.getResult().getSurat().getLink_surat(), response.getResult().getJenissurat().getJenis_surat());
+                            keterangan.setText(ket);*/
+                            link_ = response.getResult().getSurat().getLink_surat();
+                            nama_ = response.getResult().getJenissurat().getJenis_surat();
                         }
                     }else{
                         getBaseActivity().showAlertDialog("Pesan", response.getMessage());
@@ -230,15 +243,6 @@ public class FragmentScanQr extends BaseFragment{
             mainLayout.setVisibility(View.GONE);
             emptyData.setVisibility(View.VISIBLE);
         }
-    }
-
-    private void downloadFile(String link_surat, String jenis_surat){
-        nama_surat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                downloadFileSurat(link_surat, jenis_surat);
-            }
-        });
     }
 
     private void downloadFileSurat(String link_surat, String jenis_surat){
