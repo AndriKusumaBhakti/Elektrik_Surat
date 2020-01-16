@@ -9,6 +9,7 @@ public class ModelScanQr implements Serializable {
     private ModelPengguna penduduk;
     private ModelSuratQr surat;
     private ModelJenisSurat jenissurat;
+    private ModelDusun dusun;
 
     public GenerateQrCode getQrcode() {
         return qrcode;
@@ -40,5 +41,13 @@ public class ModelScanQr implements Serializable {
 
     public void setJenissurat(ModelJenisSurat jenissurat) {
         this.jenissurat = jenissurat;
+    }
+
+    public ModelDusun getDusun() {
+        return dusun;
+    }
+
+    public void setDusun(ModelDusun dusun) {
+        this.dusun = dusun;
     }
 }

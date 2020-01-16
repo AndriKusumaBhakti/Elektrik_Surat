@@ -55,7 +55,6 @@
                     <LinearLayout
                         android:id="@+id/link_surat"
                         android:layout_gravity="center"
-                        android:background="@drawable/shape_profile2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/medbooks_10dp"
@@ -319,6 +318,127 @@
                         android:visibility="gone"
                         android:textColor="@color/black"
                         android:textSize="@dimen/medbooks_13dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/medbooks_10dp"
+                    android:layout_marginTop="@dimen/medbooks_10dp"
+                    android:layout_marginRight="@dimen/medbooks_10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.2"
+                        android:text="Keterangan Surat"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/medbooks_15dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/medbooks_2dp"
+                        android:layout_marginBottom="@dimen/medbooks_3dp"
+                        android:layout_marginTop="@dimen/medbooks_3dp"
+                        android:background="@color/new_purple"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/medbooks_3dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.2"
+                            android:text="Nama Kades"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medbooks_13dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:text=":"
+                            android:textSize="@dimen/medbooks_13dp"/>
+                        <TextView
+                            android:id="@+id/nama_kades"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1.2"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:text="-"
+                            android:textSize="@dimen/medbooks_13dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/medbooks_3dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.2"
+                            android:text="Dusun"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medbooks_13dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:text=":"
+                            android:textSize="@dimen/medbooks_13dp"/>
+                        <TextView
+                            android:id="@+id/nama_dusun"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1.2"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:text="-"
+                            android:textSize="@dimen/medbooks_13dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/medbooks_3dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.2"
+                            android:text="Nomer Surat"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medbooks_13dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:text=":"
+                            android:textSize="@dimen/medbooks_13dp"/>
+                        <TextView
+                            android:id="@+id/no_surat"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1.2"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:text="-"
+                            android:textSize="@dimen/medbooks_13dp"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/medbooks_2dp"
+                        android:layout_marginBottom="@dimen/medbooks_3dp"
+                        android:layout_marginTop="@dimen/medbooks_3dp"
+                        android:background="@color/new_purple"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

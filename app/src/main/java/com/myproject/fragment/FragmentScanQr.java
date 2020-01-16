@@ -39,7 +39,7 @@ public class FragmentScanQr extends BaseFragment{
     private String qr_code;
 
     private LinearLayout link_surat, emptyData;
-    TextView nik, name, alamat, ttl, status, kwg, keterangan;
+    TextView nik, name, alamat, ttl, status, kwg, keterangan, nama_kades, nama_dusun, no_surat;
     private TextView nama_surat;
     private ScrollView mainLayout;
     LoadingDialog loadingScan = new LoadingDialog();
@@ -90,6 +90,9 @@ public class FragmentScanQr extends BaseFragment{
         status = (TextView) view.findViewById(R.id.status);
         kwg = (TextView) view.findViewById(R.id.kwg);
         keterangan = (TextView) view.findViewById(R.id.keterangan);
+        nama_kades = (TextView) view.findViewById(R.id.nama_kades);
+        nama_dusun = (TextView) view.findViewById(R.id.nama_dusun);
+        no_surat = (TextView) view.findViewById(R.id.no_surat);
         scanQRCode();
     }
 
@@ -192,6 +195,15 @@ public class FragmentScanQr extends BaseFragment{
                             }
                             if (!StringUtil.checkNullString(response.getResult().getPenduduk().getKewarganegaraan()).isEmpty()){
                                 kwg.setText(response.getResult().getPenduduk().getKewarganegaraan());
+                            }
+                            if (!StringUtil.checkNullString(response.getResult().getQrcode().getNama_kades()).isEmpty()){
+                                nama_kades.setText(response.getResult().getQrcode().getNama_kades());
+                            }
+                            if (!StringUtil.checkNullString(response.getResult().getDusun().getNama_dusun()).isEmpty()){
+                                nama_dusun.setText(response.getResult().getDusun().getNama_dusun());
+                            }
+                            if (!StringUtil.checkNullString(response.getResult().getSurat().getId_surat()).isEmpty()){
+                                no_surat.setText(response.getResult().getSurat().getId_surat());
                             }
                             /*String ket = null;
                             if (!StringUtil.checkNullString(response.getResult().getQrcode().getKeperluan()).isEmpty()){
