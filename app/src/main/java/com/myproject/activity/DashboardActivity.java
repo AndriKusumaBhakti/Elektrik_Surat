@@ -1,5 +1,6 @@
 package com.myproject.activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -69,6 +70,7 @@ public class DashboardActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        requestAppPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0, 0);
         toolbar = (Toolbar) findViewById(R.id.mainToolbar);
         bottomNavigation= (AHBottomNavigation) findViewById(R.id.bottom_navigation);
         setSupportActionBar(toolbar);

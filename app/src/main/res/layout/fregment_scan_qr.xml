@@ -433,6 +433,37 @@
                             android:text="-"
                             android:textSize="@dimen/medbooks_13dp"/>
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/medbooks_3dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.2"
+                            android:text="Tangal Approve"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/medbooks_13dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:text=":"
+                            android:textSize="@dimen/medbooks_13dp"/>
+                        <TextView
+                            android:id="@+id/tgl_approve"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1.2"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:text="-"
+                            android:textSize="@dimen/medbooks_13dp"/>
+                    </LinearLayout>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/medbooks_2dp"

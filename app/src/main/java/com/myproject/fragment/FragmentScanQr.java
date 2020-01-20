@@ -39,7 +39,7 @@ public class FragmentScanQr extends BaseFragment{
     private String qr_code;
 
     private LinearLayout link_surat, emptyData;
-    TextView nik, name, alamat, ttl, status, kwg, keterangan, nama_kades, nama_dusun, no_surat;
+    TextView nik, name, alamat, ttl, status, kwg, keterangan, nama_kades, nama_dusun, no_surat, tgl_approve;
     private TextView nama_surat;
     private ScrollView mainLayout;
     LoadingDialog loadingScan = new LoadingDialog();
@@ -93,6 +93,7 @@ public class FragmentScanQr extends BaseFragment{
         nama_kades = (TextView) view.findViewById(R.id.nama_kades);
         nama_dusun = (TextView) view.findViewById(R.id.nama_dusun);
         no_surat = (TextView) view.findViewById(R.id.no_surat);
+        tgl_approve = (TextView) view.findViewById(R.id.tgl_approve);
         scanQRCode();
     }
 
@@ -173,6 +174,9 @@ public class FragmentScanQr extends BaseFragment{
                             if (!StringUtil.checkNullString(response.getResult().getPenduduk().getNik_penduduk()).isEmpty()){
                                 nik.setText(response.getResult().getPenduduk().getNik_penduduk());
                             }
+                            if (!StringUtil.checkNullString(response.getResult().getPenduduk().getNama_penduduk()).isEmpty()){
+                                name.setText(response.getResult().getPenduduk().getNama_penduduk());
+                            }
                             if (!StringUtil.checkNullString(response.getResult().getPenduduk().getAlamat_penduduk()).isEmpty()){
                                 alamat.setText(response.getResult().getPenduduk().getAlamat_penduduk());
                             }
@@ -204,6 +208,9 @@ public class FragmentScanQr extends BaseFragment{
                             }
                             if (!StringUtil.checkNullString(response.getResult().getSurat().getId_surat()).isEmpty()){
                                 no_surat.setText(response.getResult().getSurat().getId_surat());
+                            }
+                            if (!StringUtil.checkNullString(response.getResult().getSurat().getTgl_approve()).isEmpty()){
+                                tgl_approve.setText(response.getResult().getSurat().getTgl_approve());
                             }
                             /*String ket = null;
                             if (!StringUtil.checkNullString(response.getResult().getQrcode().getKeperluan()).isEmpty()){
