@@ -209,29 +209,6 @@ public class FragmentScanQrPenduduk extends BaseFragment{
                             if (!StringUtil.checkNullString(response.getResult().getSurat().getTgl_approve()).isEmpty()){
                                 tgl_approve.setText(response.getResult().getSurat().getTgl_approve());
                             }
-                            /*String ket = null;
-                            if (!StringUtil.checkNullString(response.getResult().getQrcode().getKeperluan()).isEmpty()){
-                                ket = "Keperluan    : "+response.getResult().getQrcode().getKeperluan()+"\n";
-                            }
-                            if (ket == null){
-                                if (!StringUtil.checkNullString(response.getResult().getQrcode().getKeterangan()).isEmpty()) {
-                                    ket = "Keterangan   : " + response.getResult().getQrcode().getKeterangan() + "\n";
-                                }
-                            }else {
-                                if (!StringUtil.checkNullString(response.getResult().getQrcode().getKeterangan()).isEmpty()) {
-                                    ket = ket + "Keterangan : " + response.getResult().getQrcode().getKeterangan() + "\n";
-                                }
-                            }
-                            if (ket == null){
-                                if (!StringUtil.checkNullString(response.getResult().getQrcode().getBerlaku()).isEmpty()) {
-                                    ket = "Berlaku  : " + response.getResult().getQrcode().getBerlaku() + "\n";
-                                }
-                            }else {
-                                if (!StringUtil.checkNullString(response.getResult().getQrcode().getBerlaku()).isEmpty()) {
-                                    ket = ket + "Berlaku    : " + response.getResult().getQrcode().getBerlaku() + "\n";
-                                }
-                            }
-                            keterangan.setText(ket);*/
                             link_ = response.getResult().getSurat().getLink_surat();
                             nama_ = response.getResult().getJenissurat().getJenis_surat();
                         }
