@@ -1,5 +1,6 @@
 package com.myproject.fragment;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewAnimator;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.myproject.R;
 import com.myproject.activity.DashboardActivity;
 import com.myproject.api.TaskSuratSaya;
@@ -20,6 +23,7 @@ import com.myproject.database.Account;
 import com.myproject.database.AccountEntity;
 import com.myproject.model.request.RequestJenisSurat;
 import com.myproject.model.response.ResponseFileSurat;
+import com.myproject.util.Constants;
 
 import java.util.List;
 
@@ -38,6 +42,8 @@ public class FragmentBeranda extends BaseFragment {
     private LinearLayout lprofile;
     private TextView rememberNow;
     private TextView statusRember;
+
+    private IntentIntegrator qrScanner;
 
     private Account account;
     private List<AccountEntity> profiles;
@@ -85,6 +91,8 @@ public class FragmentBeranda extends BaseFragment {
         profile_home_name.setText(accountEntity.getNama());
         lprofile = (LinearLayout) view.findViewById(R.id.lprofile);
         getDataSurat();
+        qrScanner = new IntentIntegrator(getBaseActivity());
+        qrScanner.setBeepEnabled(false);
     }
 
     @Override
@@ -97,7 +105,8 @@ public class FragmentBeranda extends BaseFragment {
 
             @Override
             public void onRightIconClick() {
-
+                qrScanner.setPrompt(getResources().getString(R.string.hintscanQr));
+                qrScanner.initiateScan();
             }
 
             @Override
@@ -119,7 +128,7 @@ public class FragmentBeranda extends BaseFragment {
     public void updateUI() {
         getBaseActivity().setLeftIcon(R.drawable.no_user);
         getBaseActivity().setRightIcon2(R.drawable.icon_reload_white);
-        getBaseActivity().setRightIcon(0);
+        getBaseActivity().setRightIcon(R.drawable.icon_scan_qr_white);
         getBaseActivity().showDisplayLogoTitle(false);
         getBaseActivity().changeHomeToolbarBackground(true);
     }

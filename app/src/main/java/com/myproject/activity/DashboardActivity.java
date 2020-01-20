@@ -2,6 +2,7 @@ package com.myproject.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.myproject.R;
 import com.myproject.aplication.APP;
 import com.myproject.fragment.BaseFragment;
@@ -19,6 +22,9 @@ import com.myproject.fragment.FragmentBeranda;
 import com.myproject.fragment.FragmentFileSaya;
 import com.myproject.fragment.FragmentJenisSurat;
 import com.myproject.fragment.FragmentLainnya;
+import com.myproject.fragment.FragmentScanQr;
+import com.myproject.fragment.FragmentScanQrPenduduk;
+import com.myproject.util.Constants;
 import com.myproject.util.FunctionUtil;
 
 import java.lang.ref.WeakReference;
@@ -169,4 +175,21 @@ public class DashboardActivity extends BaseActivity {
         replaceFragment(R.id.container, "Lainnya", fragment, true);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            FragmentScanQrPenduduk fragment = new FragmentScanQrPenduduk();
+            DashboardActivity dashboard = DashboardActivity.instance;
+            Bundle bundle = new Bundle();
+            if (result.getContents() != null) {
+                bundle.putString(Constants.QR_CODE, result.getContents());
+            }else{
+                bundle.putString(Constants.QR_CODE, "");
+            }
+            fragment.setArguments(bundle);
+            dashboard.pushFragmentDashboard(fragment);
+        }
+    }
 }

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item android:title="Scan QR Code"
-            android:icon="@drawable/icon_scan_qr"
+            android:icon="@drawable/icon_scan_qr_black"
             android:id="@+id/nav_home"
             android:checked="true"/>
         <item android:title="Request Surat"
