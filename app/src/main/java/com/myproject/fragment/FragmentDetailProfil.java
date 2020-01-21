@@ -2,10 +2,9 @@ package com.myproject.fragment;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.myproject.R;
-import com.myproject.activity.DashboardActivity;
 import com.myproject.aplication.APP;
 import com.myproject.aplication.Preference;
 import com.myproject.base.OnActionbarListener;
@@ -17,7 +16,7 @@ import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.List;
 
-public class FragmentDetailProfil extends BaseFragment {
+public class FragmentDetailProfil extends BaseFragment implements View.OnClickListener{
     private String mParam1;
     private String mParam2;
     private static final String ARG_PARAM1 = "param1";
@@ -30,6 +29,8 @@ public class FragmentDetailProfil extends BaseFragment {
     ExpandableLayout exp_biodata, exp_pendidikan, exp_pekerjaan;
     TextView profile_name, nik, name, alamat, ttl, status, kwg, pendi, kerja;
     TextView biodata, pendidikan, pekerjaan;
+    ImageView profile_home_avatar;
+    private static final int REQUEST_CODE_IMAGE = 10001;
 
     public FragmentDetailProfil() {}
 
@@ -75,6 +76,8 @@ public class FragmentDetailProfil extends BaseFragment {
         biodata = (TextView) view.findViewById(R.id.biodata);
         pendidikan = (TextView) view.findViewById(R.id.pendidikan);
         pekerjaan = (TextView) view.findViewById(R.id.pekerjaan);
+        profile_home_avatar = (ImageView) view.findViewById(R.id.profile_home_avatar);
+        profile_home_avatar.setOnClickListener(this);
         if (!StringUtil.checkNullString(accountEntity.getNik()).isEmpty()){
             nik.setText(accountEntity.getNik());
         }
@@ -188,5 +191,12 @@ public class FragmentDetailProfil extends BaseFragment {
     @Override
     public int getFragmentLayout() {
         return R.layout.fregment_detail_profil;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.profile_home_avatar){
+
+        }
     }
 }

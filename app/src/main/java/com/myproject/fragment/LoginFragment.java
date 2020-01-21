@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
@@ -36,9 +37,11 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener{
     private TextInputLayout login_label_password;
     private EditText login_input_username;
     private EditText login_input_password;
+    private ImageView show_password;
 //    private TextView lupa_password;
     private Button login_btn;
     private boolean isEmail;
+    private boolean isChecked = true;
 
     final static String DIALOG_FRAGMENT_FLAG = "DF_FLAG";
 
@@ -72,6 +75,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener{
         login_label_password = (TextInputLayout) view.findViewById(R.id.login_label_password);
         login_input_username = (EditText) view.findViewById(R.id.login_input_username);
         login_input_password = (EditText) view.findViewById(R.id.login_input_password);
+        show_password = (ImageView) view.findViewById(R.id.show_password);
 //        lupa_password = (TextView) view.findViewById(R.id.lupa_password);
         login_btn = (Button) view.findViewById(R.id.login_btn);
     }
@@ -80,6 +84,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener{
     public void setUICallbacks() {
         login_btn.setOnClickListener(this);
         menu_right_btn.setOnClickListener(this);
+        show_password.setOnClickListener(this);
 //        lupa_password.setOnClickListener(this);
         login_input_username.addTextChangedListener(new TextWatcher() {
             @Override
@@ -205,6 +210,16 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener{
                 registerTask(task);
                 task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, request);
 
+            }
+        }else if (view == show_password){
+            if (isChecked){
+                isChecked = false;
+                login_input_password.setInputType(InputType.TYPE_CLASS_TEXT);
+                show_password.setImageDrawable(getResources().getDrawable(R.drawable.icon_hidd_pass));
+            }else{
+                isChecked = true;
+                login_input_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                show_password.setImageDrawable(getResources().getDrawable(R.drawable.icon_show_pass));
             }
         }
     }

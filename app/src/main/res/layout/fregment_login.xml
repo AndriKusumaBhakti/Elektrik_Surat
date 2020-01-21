@@ -119,28 +119,37 @@
                             android:textSize="@dimen/medbooks_14dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/login_label_password"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/medbooks_10dp">
-
-                        <EditText
-                            android:id="@+id/login_input_password"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/login_label_password"
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/medbooks_48dp"
-                            android:background="@drawable/login_shape_input"
-                            android:textColorHint="@color/white"
-                            android:textColor="@color/white"
-                            android:ems="10"
-                            android:gravity="center"
-                            android:hint="kata sandi"
-                            android:imeOptions="actionDone"
-                            android:inputType="textPassword"
-                            android:textSize="@dimen/medbooks_14dp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="wrap_content">
+                            <EditText
+                                android:id="@+id/login_input_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/medbooks_48dp"
+                                android:textColorHint="@color/white"
+                                android:textColor="@color/white"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:background="@drawable/login_shape_input"
+                                android:hint="kata sandi"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPassword|text"
+                                android:textSize="@dimen/medbooks_14dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:id="@+id/show_password"
+                            android:layout_width="@dimen/medbooks_30dp"
+                            android:layout_height="@dimen/medbooks_30dp"
+                            android:layout_marginTop="@dimen/medbooks_3dp"
+                            android:layout_marginRight="@dimen/medbooks_10dp"
+                            android:layout_gravity="center|right"
+                            android:src="@drawable/icon_show_pass"/>
+                    </FrameLayout>
                     <!--<TextView
                         android:id="@+id/lupa_password"
                         android:layout_width="match_parent"
