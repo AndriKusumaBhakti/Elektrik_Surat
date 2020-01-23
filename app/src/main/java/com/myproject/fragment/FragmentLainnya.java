@@ -5,17 +5,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewAnimator;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.myproject.R;
 import com.myproject.StartActivity;
 import com.myproject.activity.DashboardActivity;
 import com.myproject.aplication.APP;
+import com.myproject.aplication.Config;
 import com.myproject.aplication.Preference;
 import com.myproject.base.OnActionbarListener;
 import com.myproject.database.Account;
 import com.myproject.database.AccountEntity;
+import com.myproject.util.CircleTransform;
 import com.myproject.util.Constants;
 import com.myproject.util.FunctionUtil;
 
@@ -37,6 +42,7 @@ public class FragmentLainnya extends BaseFragment {
     private Account account;
     private List<AccountEntity> profiles;
     private AccountEntity accountEntity;
+    private ImageView barAvatar;
 
     public FragmentLainnya() {}
 
@@ -74,6 +80,7 @@ public class FragmentLainnya extends BaseFragment {
         name_user = (TextView) view.findViewById(R.id.name_user);
         alamat_uset = (TextView) view.findViewById(R.id.alamat_uset);
         ttl_user = (TextView) view.findViewById(R.id.ttl_user);
+        barAvatar = (ImageView) view.findViewById(R.id.barAvatar);
     }
 
     @Override
@@ -166,6 +173,7 @@ public class FragmentLainnya extends BaseFragment {
         getBaseActivity().setRightIcon(0);
         getBaseActivity().showDisplayLogoTitle(false);
         getBaseActivity().changeHomeToolbarBackground(true);
+        getBaseActivity().setLeftView(accountEntity.getFoto());
     }
 
     @Override
@@ -182,6 +190,13 @@ public class FragmentLainnya extends BaseFragment {
         name_user.setText(accountEntity.getNama());
         alamat_uset.setText(accountEntity.getAlamat());
         ttl_user.setText(accountEntity.getTempat()+", "+accountEntity.getTanggal());
+        Glide.with(getActivity())
+                .load(Config.getUrlFoto()+accountEntity.getFoto())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.no_user)
+                .error(R.drawable.no_user)
+                .transform(new CircleTransform(getBaseActivity()))
+                .into(barAvatar);
 
         final Animation inAnim = AnimationUtils.loadAnimation(getBaseActivity(), R.anim.slide_in_top);
         final Animation outAnim = AnimationUtils.loadAnimation(getBaseActivity(), R.anim.slide_in_bottom);

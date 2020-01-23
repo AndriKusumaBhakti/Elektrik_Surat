@@ -47,7 +47,7 @@ public class FragmentBeranda extends BaseFragment {
     private LinearLayout lprofile;
     private TextView rememberNow;
     private TextView statusRember;
-    private ImageView profile_home_avatar;
+    private ImageView profile_home_avatar, barAvatar;
 
     private IntentIntegrator qrScanner;
 
@@ -86,6 +86,7 @@ public class FragmentBeranda extends BaseFragment {
     @Override
     public void initView(View view) {
         profile_home_avatar = (ImageView) view.findViewById(R.id.profile_home_avatar);
+        barAvatar = (ImageView) view.findViewById(R.id.barAvatar);
         selectProfileAnimator = (ViewAnimator) view.findViewById(R.id.select_profile_animator);
         name_user = (TextView) view.findViewById(R.id.name_user);
         alamat_uset = (TextView) view.findViewById(R.id.alamat_uset);
@@ -100,13 +101,6 @@ public class FragmentBeranda extends BaseFragment {
         getDataSurat();
         qrScanner = new IntentIntegrator(getBaseActivity());
         qrScanner.setBeepEnabled(false);
-        Glide.with(getActivity())
-                .load(Config.getUrlFoto()+accountEntity.getFoto())
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(R.drawable.no_user)
-                .error(R.drawable.no_user)
-                .transform(new CircleTransform(getBaseActivity()))
-                .into(profile_home_avatar);
     }
 
     @Override
@@ -145,6 +139,15 @@ public class FragmentBeranda extends BaseFragment {
         getBaseActivity().setRightIcon(R.drawable.icon_scan_qr_white);
         getBaseActivity().showDisplayLogoTitle(false);
         getBaseActivity().changeHomeToolbarBackground(true);
+        getBaseActivity().setLeftView(accountEntity.getFoto());
+
+        Glide.with(getActivity())
+                .load(Config.getUrlFoto()+accountEntity.getFoto())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.no_user)
+                .error(R.drawable.no_user)
+                .transform(new CircleTransform(getBaseActivity()))
+                .into(profile_home_avatar);
     }
 
     @Override
@@ -161,6 +164,13 @@ public class FragmentBeranda extends BaseFragment {
         name_user.setText(accountEntity.getNama());
         alamat_uset.setText(accountEntity.getAlamat());
         ttl_user.setText(accountEntity.getTempat()+", "+accountEntity.getTanggal());
+        Glide.with(getActivity())
+                .load(Config.getUrlFoto()+accountEntity.getFoto())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.no_user)
+                .error(R.drawable.no_user)
+                .transform(new CircleTransform(getBaseActivity()))
+                .into(barAvatar);
 
         final Animation inAnim = AnimationUtils.loadAnimation(getBaseActivity(), R.anim.slide_in_top);
         final Animation outAnim = AnimationUtils.loadAnimation(getBaseActivity(), R.anim.slide_in_bottom);
@@ -182,6 +192,14 @@ public class FragmentBeranda extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
+        account = new Account(getBaseActivity());
+        profiles = account.getAllLanguage();
+        for(int i = 0; i<profiles.size(); i++){
+            if ((profiles.get(i).getNik()).equals(APP.getStringPref(getBaseActivity(), Preference.NIK))){
+                accountEntity = profiles.get(i);
+            }
+        }
+        updateUI();
         DashboardActivity.instance.showBottomMenu();
     }
 

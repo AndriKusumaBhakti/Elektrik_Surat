@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -15,6 +16,8 @@ import android.widget.ViewAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.myproject.R;
@@ -23,6 +26,7 @@ import com.myproject.adapter.AdapterJenisSurat;
 import com.myproject.adapter.AdapterSuratSaya;
 import com.myproject.api.TaskSuratSaya;
 import com.myproject.aplication.APP;
+import com.myproject.aplication.Config;
 import com.myproject.aplication.Preference;
 import com.myproject.base.OnActionbarListener;
 import com.myproject.database.Account;
@@ -31,6 +35,7 @@ import com.myproject.model.ModelJenisSurat;
 import com.myproject.model.ModelSuratSaya;
 import com.myproject.model.request.RequestJenisSurat;
 import com.myproject.model.response.ResponseFileSurat;
+import com.myproject.util.CircleTransform;
 import com.myproject.util.DownloadTask;
 
 import java.util.ArrayList;
@@ -60,6 +65,7 @@ public class FragmentFileSaya extends BaseFragment {
     private RecyclerView list_data;
     private MaterialRefreshLayout refresh_data;
     private LinearLayoutManager mLayoutManager;
+    private ImageView barAvatar;
 
     ProgressDialog mProgressDialog;
 
@@ -93,10 +99,10 @@ public class FragmentFileSaya extends BaseFragment {
     @Override
     public void initView(View view) {
         selectProfileAnimator = (ViewAnimator) view.findViewById(R.id.select_profile_animator);
+        barAvatar = (ImageView) view.findViewById(R.id.barAvatar);
         name_user = (TextView) view.findViewById(R.id.name_user);
         alamat_uset = (TextView) view.findViewById(R.id.alamat_uset);
         ttl_user = (TextView) view.findViewById(R.id.ttl_user);
-
         refresh_data = (MaterialRefreshLayout) view.findViewById(R.id.refresh_data);
         emptyData = (LinearLayout) view.findViewById(R.id.emptyData);
         list_data = (RecyclerView) view.findViewById(R.id.list_data);
@@ -150,6 +156,7 @@ public class FragmentFileSaya extends BaseFragment {
         getBaseActivity().setRightIcon(0);
         getBaseActivity().showDisplayLogoTitle(false);
         getBaseActivity().changeHomeToolbarBackground(true);
+        getBaseActivity().setLeftView(accountEntity.getFoto());
     }
 
     @Override
@@ -166,6 +173,13 @@ public class FragmentFileSaya extends BaseFragment {
         name_user.setText(accountEntity.getNama());
         alamat_uset.setText(accountEntity.getAlamat());
         ttl_user.setText(accountEntity.getTempat()+", "+accountEntity.getTanggal());
+        Glide.with(getActivity())
+                .load(Config.getUrlFoto()+accountEntity.getFoto())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.no_user)
+                .error(R.drawable.no_user)
+                .transform(new CircleTransform(getBaseActivity()))
+                .into(barAvatar);
 
         final Animation inAnim = AnimationUtils.loadAnimation(getBaseActivity(), R.anim.slide_in_top);
         final Animation outAnim = AnimationUtils.loadAnimation(getBaseActivity(), R.anim.slide_in_bottom);

@@ -31,14 +31,19 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.material.snackbar.Snackbar;
 import com.myproject.R;
 import com.myproject.aplication.APP;
+import com.myproject.aplication.Config;
 import com.myproject.base.ActivityInterface;
 import com.myproject.base.OnActionbarListener;
 import com.myproject.fragment.AlertDialog;
 import com.myproject.fragment.BaseFragment;
+import com.myproject.util.CircleTransform;
 import com.myproject.util.FragmentHelper;
+import com.myproject.util.StringUtil;
 import com.myproject.util.TextUtil;
 
 import java.util.ArrayList;
@@ -205,7 +210,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Activity
         if (menuAnimator != null){
             menuAnimator.setDisplayedChild(0);
         }
-        setLeftIcon(R.mipmap.ic_launcher);
+        setLeftIcon(R.drawable.no_user);
         setRightIcon(0);
         setRightIcon2(0);
     }
@@ -218,6 +223,24 @@ public abstract class BaseActivity extends AppCompatActivity implements Activity
             else{
                 leftIcon.setVisibility(View.VISIBLE);
                 leftIcon.setImageResource(drawableRes);
+            }
+        }
+    }
+
+    public void setLeftView(String foto){
+        if (leftIcon != null) {
+            if (StringUtil.checkNullString(foto).isEmpty() || foto == null){
+                leftIcon.setVisibility(View.VISIBLE);
+            }
+            else{
+                leftIcon.setVisibility(View.VISIBLE);
+                Glide.with(context)
+                        .load(Config.getUrlFoto()+foto)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .placeholder(R.drawable.no_user)
+                        .error(R.drawable.no_user)
+                        .transform(new CircleTransform(context))
+                        .into(leftIcon);
             }
         }
     }

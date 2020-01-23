@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -13,6 +14,8 @@ import android.widget.ViewAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.myproject.R;
@@ -22,6 +25,7 @@ import com.myproject.api.TaskCreateSurat;
 import com.myproject.api.TaskJenisSurat;
 import com.myproject.api.TaskRequestJenisSurat;
 import com.myproject.aplication.APP;
+import com.myproject.aplication.Config;
 import com.myproject.aplication.Preference;
 import com.myproject.base.OnActionbarListener;
 import com.myproject.database.Account;
@@ -34,6 +38,7 @@ import com.myproject.model.request.RequestJenisSurat;
 import com.myproject.model.request.RequestSurat;
 import com.myproject.model.response.ResponseJenisSurat;
 import com.myproject.model.response.ResponseRequestSurat;
+import com.myproject.util.CircleTransform;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +68,7 @@ public class FragmentJenisSurat extends BaseFragment {
     private Account account;
     private List<AccountEntity> profiles;
     private AccountEntity accountEntity;
+    private ImageView barAvatar;
 
     public FragmentJenisSurat() {}
 
@@ -94,6 +100,7 @@ public class FragmentJenisSurat extends BaseFragment {
     @Override
     public void initView(View view) {
         selectProfileAnimator = (ViewAnimator) view.findViewById(R.id.select_profile_animator);
+        barAvatar = (ImageView) view.findViewById(R.id.barAvatar);
         name_user = (TextView) view.findViewById(R.id.name_user);
         alamat_uset = (TextView) view.findViewById(R.id.alamat_uset);
         ttl_user = (TextView) view.findViewById(R.id.ttl_user);
@@ -150,6 +157,7 @@ public class FragmentJenisSurat extends BaseFragment {
         getBaseActivity().setRightIcon(0);
         getBaseActivity().showDisplayLogoTitle(false);
         getBaseActivity().changeHomeToolbarBackground(true);
+        getBaseActivity().setLeftView(accountEntity.getFoto());
     }
 
     @Override
@@ -290,6 +298,13 @@ public class FragmentJenisSurat extends BaseFragment {
         name_user.setText(accountEntity.getNama());
         alamat_uset.setText(accountEntity.getAlamat());
         ttl_user.setText(accountEntity.getTempat()+", "+accountEntity.getTanggal());
+        Glide.with(getActivity())
+                .load(Config.getUrlFoto()+accountEntity.getFoto())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.no_user)
+                .error(R.drawable.no_user)
+                .transform(new CircleTransform(getBaseActivity()))
+                .into(barAvatar);
 
         final Animation inAnim = AnimationUtils.loadAnimation(getBaseActivity(), R.anim.slide_in_top);
         final Animation outAnim = AnimationUtils.loadAnimation(getBaseActivity(), R.anim.slide_in_bottom);
