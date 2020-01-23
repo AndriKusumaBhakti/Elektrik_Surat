@@ -23,7 +23,6 @@ public class StartActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         isPushToMain = false;
         loading();
         if (getIntent().getExtras() != null) {
@@ -33,6 +32,7 @@ public class StartActivity extends BaseActivity {
                 replaceFragmentwithTag(R.id.container, LoginFragment.newInstance(), false, "LOGIN");
             }
         }
+        super.onCreate(savedInstanceState);
     }
 
     @Override

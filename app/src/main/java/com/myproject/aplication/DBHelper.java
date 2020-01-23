@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class DBHelper extends OrmLiteSqliteOpenHelper {
 
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 20;
     private Context context;
 
     public DBHelper(Context context) {
@@ -45,6 +45,14 @@ public class DBHelper extends OrmLiteSqliteOpenHelper {
             if(oldVersion<16){
                 TableUtils.dropTable(connectionSource, AccountEntity.class, true);
                 APP.removePreference(context, Preference.TOKEN);
+            }
+            if(oldVersion<17){
+
+                try {
+                    getDao(AccountEntity.class).executeRaw("ALTER TABLE `heart_rate_setting` ADD COLUMN " + AccountEntity.FOTO + " VARCHAR;");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

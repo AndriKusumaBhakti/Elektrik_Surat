@@ -14,7 +14,7 @@ public class Config {
     public static String DEVELOPMENT_URL = "desawaru.geraitani.id";
     public static String PRODUCTION_URL = "desawaru.geraitani.id";
 
-    public static String PATH_FOTO = "/upload/profil";
+    public static String PATH_FOTO = "/upload/profil/";
 
     public static int isDevelopment;
     public static boolean isDebuging;

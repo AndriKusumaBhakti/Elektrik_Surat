@@ -309,7 +309,7 @@ public class FragmentDetailProfil extends BaseFragment implements View.OnClickLi
             }
             File fileImage = new File(dir, newImages);
 
-            Uri photoURI = FileProvider.getUriForFile(getBaseActivity(), getBaseActivity().getApplicationContext().getPackageName() + ".my.package.name.provider", fileImage);
+            Uri photoURI = FileProvider.getUriForFile(getBaseActivity(), "com.myproject.provider", fileImage);
 
             photoSelected = photoURI;
             photoFilePaths = fileImage.getPath();

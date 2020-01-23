@@ -186,6 +186,7 @@ public class FragmentBeranda extends BaseFragment {
     }
 
     private void getDataSurat(){
+        loadingData.setCancelLable(true);
         loadingData.show(getBaseActivity().getFragmentManager(), DIALOG_FRAGMENT_FLAG);
         RequestJenisSurat request = new RequestJenisSurat();
         request.setMethod("reqSurat");

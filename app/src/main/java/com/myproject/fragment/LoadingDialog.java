@@ -34,10 +34,15 @@ public class LoadingDialog extends DialogFragment {
     public static final String RIGHT_BUTTON = "RIGHT_BUTTON";
     public static final String LOADING_ICON = "LOADING_ICON";
     public static final String CLOSE_BTN = "CLOSE_BTN";
+    protected boolean cancelLable = false;
 
     public interface LoadingDialogListener{
         public void onLeftButtonClick();
         public void onRightButtonClick();
+    }
+
+    public void setCancelLable(boolean cancelLable){
+        this.cancelLable = cancelLable;
     }
 
     private LoadingDialogListener listener;
@@ -72,7 +77,7 @@ public class LoadingDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         dialog = new Dialog(getActivity());
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.setCanceledOnTouchOutside(false);
+        dialog.setCanceledOnTouchOutside(cancelLable);
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.loading_dialog);
         dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
