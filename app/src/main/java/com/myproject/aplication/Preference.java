@@ -10,6 +10,7 @@ public class Preference {
     public static final String ROLE = "role";
     public static final String ONE_SIGNAL_USER_ID = "one_signal_user_id";
     public static final String ONE_SIGNAL_REG_ID = "one_signal_reg_id";
+    public static final String PHOTOPATH = "PhotoPaths";
 
 
     private static String getPrefKey(int StringID) {

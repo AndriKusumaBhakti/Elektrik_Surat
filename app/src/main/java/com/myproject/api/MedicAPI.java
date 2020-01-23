@@ -57,4 +57,7 @@ public interface MedicAPI {
 
     @POST("/webservices/api.php")
     public ResponseScanQr scanQrCode(@Body MultipartTypedOutput request);
+
+    @POST("/webservices/api.php")
+    public ResponseLogin aploadFotoProfile(@Body MultipartTypedOutput request);
 }

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/close_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_black_lv1"
+        android:orientation="vertical"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rvly_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/medbooks_45dp">
+
+            <TextView
+                android:id="@+id/close_x_text"
+                android:layout_width="@dimen/medbooks_40dp"
+                android:layout_height="@dimen/medbooks_40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/google_blue"
+                android:text="X"
+                android:textSize="@dimen/medbooks_18dp" />
+
+            <TextView
+                android:id="@+id/_txvw_header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:textColor="@color/google_blue"
+                android:padding="@dimen/medbooks_5dp"
+                android:textSize="@dimen/medbooks_18dp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@color/purple_divider_color"></LinearLayout>
+
+        <ListView
+            android:id="@+id/_lsvw_11"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:layout_margin="10dp"
+            android:divider="#31BCAD"
+            android:background="@color/white"
+            android:fadeScrollbars="false"/>
+
+        <TextView
+            android:id="@+id/spinner_dialog_empty"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:layout_margin="@dimen/medbooks_10dp"
+            android:text="Please text"
+            android:gravity="center"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -25,4 +25,11 @@
     <string name="jenis_surat">Jenis Surat</string>
     <string name="file_saya">File Saya</string>
     <string name="lainnya">Lainnya</string>
+
+    <string name="take_photo">Ambil Foto</string>
+    <string name="take_gallery">Pilih dari Galeri</string>
+    <string name="take_photo_gallery">Pilih Foto dari Galeri</string>
+    <string name="take_photo_method">Tambah Foto</string>
+    <string name="select_file">Pilih Berkas</string>
+    <string name="crop_image">Potong Gambar</string>
 </resources>

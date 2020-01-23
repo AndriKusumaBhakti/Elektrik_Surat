@@ -16,6 +16,7 @@ public class ModelPengguna implements Serializable {
     private String kewarganegaraan;
     private String token;
     private String id_user;
+    private String foto;
 
     public String getId_penduduk() {
         return id_penduduk;
@@ -119,5 +120,13 @@ public class ModelPengguna implements Serializable {
 
     public void setId_user(String id_user) {
         this.id_user = id_user;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }

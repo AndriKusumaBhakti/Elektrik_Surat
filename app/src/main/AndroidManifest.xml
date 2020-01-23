@@ -88,6 +88,13 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
+
+        <activity
+            android:name=".activity.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/NoActionBarTheme" />
+
         <activity
             android:name=".activity.DashboardKepalaDesa"
             android:label="@string/app_name"

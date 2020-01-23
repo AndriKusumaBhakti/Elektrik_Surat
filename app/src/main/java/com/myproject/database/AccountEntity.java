@@ -16,6 +16,7 @@ public class AccountEntity extends BaseEntity{
     public static final String JK = "jenis_kelamin";
     public static final String KEWARGANEGARAAN = "kewarganegaraan";
     public static final String ID_USER = "id_user";
+    public static final String FOTO = "foto";
 
     @DatabaseField(columnName = NIK_PENDUDUK)
     private String nik;
@@ -39,6 +40,8 @@ public class AccountEntity extends BaseEntity{
     private String kewarganegaraan;
     @DatabaseField(columnName = ID_USER)
     private String id_user;
+    @DatabaseField(columnName = FOTO)
+    private String foto;
 
     public String getNik() {
         return nik;
@@ -126,5 +129,13 @@ public class AccountEntity extends BaseEntity{
 
     public void setId_user(String id_user) {
         this.id_user = id_user;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }

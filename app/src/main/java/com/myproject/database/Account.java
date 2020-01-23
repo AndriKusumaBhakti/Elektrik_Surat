@@ -61,6 +61,7 @@ public class Account {
         entity.setJk(StringUtil.checkNullString(response.getJenis_kelamin()));
         entity.setKewarganegaraan(StringUtil.checkNullString(response.getKewarganegaraan()));
         entity.setId_user(StringUtil.checkNullString(response.getId_user()));
+        entity.setFoto(StringUtil.checkNullString(response.getFoto()));
         this.upsertToDatabase(entity);
     }
 

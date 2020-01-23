@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/form_toolbar"
+        android:layout_height="56dp"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:background="@drawable/bg_top_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/crop_btn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/selector_btn_brown"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:textAllCaps="false"
+            android:textSize="@dimen/medbooks_14dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Simpan"
+            android:textColor="#FFFFFF"
+            style="?android:attr/borderlessButtonStyle"/>
+
+            <com.isseiaoki.simplecropview.CropImageView
+                android:id="@+id/cropImageView"
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                custom:minFrameSize="100dp"
+                custom:initialFrameScale="0.75"
+                android:scaleType="fitCenter"
+                android:layout_above="@+id/crop_btn"
+                custom:handleSize="15dp"
+                custom:frameColor="@color/google_blue"
+                custom:handleColor="@color/google_blue"
+                custom:guideShowMode="not_show" />
+    </RelativeLayout>
+</LinearLayout>
+
+
