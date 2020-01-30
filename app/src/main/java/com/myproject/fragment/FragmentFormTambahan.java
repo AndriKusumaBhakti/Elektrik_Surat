@@ -41,7 +41,7 @@ public class FragmentFormTambahan extends BaseFragment {
     private Account account;
     private List<AccountEntity> profiles;
     private AccountEntity accountEntity;
-    protected SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH);
+    protected SimpleDateFormat sdf = new SimpleDateFormat("dd-MMMM-yyyy", Locale.ENGLISH);
 
     private CardView psik, sib, sktm, skbna, skbni, skbtl, sit, skkem, skkk, skpot, skpn;
     private Button btn_simpan;
