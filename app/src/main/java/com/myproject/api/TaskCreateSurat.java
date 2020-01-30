@@ -66,6 +66,7 @@ public abstract class TaskCreateSurat extends AsyncTask<SendRequestIsi, Void, Bo
                 }
             }
         }
+        APP.log("multipartTypedOutput : "+multipartTypedOutput.toString());
         return multipartTypedOutput;
     }
 
