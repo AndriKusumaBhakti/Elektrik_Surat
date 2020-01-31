@@ -637,7 +637,7 @@ public class FragmentFormTambahan extends BaseFragment {
                         data.add(result8);
                     }else if (skpot.getVisibility() == View.VISIBLE){
                         result1.put("nama_anak", nama_anak.getText().toString().trim());
-                        data.add(result2);
+                        data.add(result1);
                         result2.put("nik_anak", nik_anak.getText().toString().trim());
                         data.add(result2);
                         result3.put("asal_sekolah", asal_sklah.getText().toString().trim());
