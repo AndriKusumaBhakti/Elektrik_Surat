@@ -126,6 +126,22 @@ public class StringUtil {
         return false;
     }
 
+    public static boolean isAlpha(String s){
+        String pattern= "^.*[a-zA-Z].*$";
+        if(s.matches(pattern)){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isNumeric(String s){
+        String pattern= "^.*[0-9].*$";
+        if(s.matches(pattern)){
+            return true;
+        }
+        return false;
+    }
+
     public final static boolean isValidEmail(CharSequence target) {
         if (target == null) {
             return false;

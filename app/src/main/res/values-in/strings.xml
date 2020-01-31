@@ -11,6 +11,8 @@
     <string name="password_requiret">kata sandi diperlukan</string>
     <string name="ulangpassword_requiret">kata sandi tidak sama</string>
     <string name="data_required">Data ini diperlukan</string>
+    <string name="data_required_alpha">Data ini diperlukan dan tidak boleh numeric</string>
+    <string name="data_required_numeric">Data ini diperlukan dan tidak boleh alpa</string>
 
     <string name="invalid_nik">Input NIK minimal 16 angka</string>
     <string name="invalid_password">Input password minimal 6 karakter</string>
