@@ -42,11 +42,19 @@
                 android:textSize="@dimen/medbooks_12dp"/>
         </LinearLayout>
         <ImageView
-            android:id="@+id/foto_single_avatar"
-            android:src="@drawable/icon_publish"
+            android:id="@+id/onReject"
+            android:src="@drawable/reject"
             android:layout_marginTop="@dimen/medbooks_10dp"
-            android:layout_width="@dimen/medbooks_30dp"
-            android:layout_height="@dimen/medbooks_30dp"
+            android:layout_width="@dimen/medbooks_35dp"
+            android:layout_height="@dimen/medbooks_35dp"
+            android:layout_marginRight="@dimen/medbooks_5dp"
+            android:gravity="center_vertical"/>
+        <ImageView
+            android:id="@+id/onApprove"
+            android:src="@drawable/approve"
+            android:layout_marginTop="@dimen/medbooks_10dp"
+            android:layout_width="@dimen/medbooks_35dp"
+            android:layout_height="@dimen/medbooks_35dp"
             android:gravity="center_vertical"/>
     </LinearLayout>
 

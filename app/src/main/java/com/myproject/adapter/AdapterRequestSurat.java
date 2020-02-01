@@ -27,13 +27,15 @@ public class AdapterRequestSurat extends RecyclerView.Adapter<AdapterRequestSura
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        public ImageView foto_single_avatar;
+        public ImageView onApprove;
+        public ImageView onReject;
         public TextView single_nama;
         public TextView single_alamat;
         public TextView single_jenis;
         public ViewHolder(View v){
             super(v);
-            foto_single_avatar = (ImageView) v.findViewById(R.id.foto_single_avatar);
+            onApprove = (ImageView) v.findViewById(R.id.onApprove);
+            onReject = (ImageView) v.findViewById(R.id.onReject);
             single_nama = (TextView) v.findViewById(R.id.single_nama);
             single_alamat = (TextView) v.findViewById(R.id.single_alamat);
             single_jenis = (TextView) v.findViewById(R.id.single_jenis);
@@ -51,20 +53,35 @@ public class AdapterRequestSurat extends RecyclerView.Adapter<AdapterRequestSura
     public void onBindViewHolder(ViewHolder holder, final int position){
         if (mDataSet.get(position).getStatus_surat().equals("1")){
             /*holder.foto_single_avatar.setVisibility(View.GONE);*/
-            holder.foto_single_avatar.setImageDrawable(mContext.getResources().getDrawable(R.drawable.icon_download));
+            holder.onApprove.setVisibility(View.GONE);
+            holder.onReject.setVisibility(View.GONE);
         }else{
             /*holder.foto_single_avatar.setVisibility(View.VISIBLE);*/
-            holder.foto_single_avatar.setImageDrawable(mContext.getResources().getDrawable(R.drawable.icon_publish));
+            holder.onApprove.setVisibility(View.VISIBLE);
+            holder.onReject.setVisibility(View.VISIBLE);
         }
         holder.single_nama.setText(String.valueOf(mDataSet.get(position).getNama()+" ("+mDataSet.get(position).getNik_penduduk()+")"));
         holder.single_alamat.setText(String.valueOf(mDataSet.get(position).getAlamat()));
         holder.single_jenis.setText(String.valueOf(mDataSet.get(position).getJenis_surat()));
-        holder.foto_single_avatar.setOnClickListener(new View.OnClickListener() {
+        holder.onApprove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.onApprove(mDataSet.get(position));
             }
         });
+        holder.onReject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onReject(mDataSet.get(position));
+            }
+        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onView(mDataSet.get(position));
+            }
+        });
+
     }
 
     @Override
@@ -74,5 +91,7 @@ public class AdapterRequestSurat extends RecyclerView.Adapter<AdapterRequestSura
 
     public interface ClickListener {
         void onApprove(ModelRequestSurat item);
+        void onReject(ModelRequestSurat item);
+        void onView(ModelRequestSurat item);
     }
 }

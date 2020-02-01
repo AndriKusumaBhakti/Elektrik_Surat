@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardUseCompatPadding="true"
-        android:layout_marginTop="5dp"
         card_view:cardCornerRadius="8dp"
-        android:background="@color/white">
+        android:background="@color/greywhite">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:orientation="horizontal"
             android:padding="@dimen/medbooks_10dp">
             <LinearLayout
@@ -26,7 +26,7 @@
                 android:layout_marginTop="@dimen/medbooks_5dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:gravity="center_vertical">
+                android:gravity="center|left">
                 <TextView
                     android:id="@+id/single_nama"
                     android:layout_width="match_parent"
@@ -38,12 +38,11 @@
             </LinearLayout>
             <ImageView
                 android:id="@+id/icon_request"
-                android:src="@drawable/icon_reuqest_file"
-                android:layout_marginTop="@dimen/medbooks_3dp"
-                android:layout_width="@dimen/medbooks_25dp"
-                android:layout_height="@dimen/medbooks_25dp"
+                android:src="@drawable/request_file"
+                android:layout_width="@dimen/medbooks_30dp"
+                android:layout_height="@dimen/medbooks_30dp"
                 android:layout_marginRight="@dimen/medbooks_5dp"
-                android:gravity="center_vertical"/>
+                android:gravity="center"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

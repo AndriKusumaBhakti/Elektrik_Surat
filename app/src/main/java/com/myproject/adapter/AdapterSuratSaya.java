@@ -47,10 +47,10 @@ public class AdapterSuratSaya extends RecyclerView.Adapter<AdapterSuratSaya.View
     public void onBindViewHolder(ViewHolder holder, final int position){
         if (mDataSet.get(position).getApprove().equals("1")){
             /*holder.foto_single_avatar.setVisibility(View.GONE);*/
-            holder.icon_request.setImageDrawable(mContext.getResources().getDrawable(R.drawable.icon_download));
+            holder.icon_request.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_download_blue));
         }else{
             /*holder.foto_single_avatar.setVisibility(View.VISIBLE);*/
-            holder.icon_request.setImageDrawable(mContext.getResources().getDrawable(R.drawable.icon_publish));
+            holder.icon_request.setVisibility(View.GONE);
         }
         holder.name.setText(mDataSet.get(position).getJenis_surat());
         holder.icon_request.setOnClickListener(new View.OnClickListener() {

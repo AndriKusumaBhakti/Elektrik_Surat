@@ -194,42 +194,79 @@ public class FragmentRequestKades extends BaseFragment {
     private class MyAdapterListener implements AdapterRequestSurat.ClickListener{
         @Override
         public void onApprove(ModelRequestSurat item) {
-            if (item.getStatus_surat().equals("1")){
-                APP.log(item.getLink_surat());
-                downloadFile(item);
-            }else {
-                final LoadingDialog dialogLoading = new LoadingDialog();
-                dialogLoading.show(getBaseActivity().getFragmentManager(), DIALOG_FRAGMENT_FLAG);
-                RequestJenisSurat model = new RequestJenisSurat();
-                model.setMethod("reqApprove");
-                model.setNik_penduduk(item.getNik_penduduk());
-                model.setId_surat(item.getId_surat());
-                TaskApproveSurat task = new TaskApproveSurat(getBaseActivity()) {
-                    @Override
-                    protected void onSuccess(ModelResponse response) {
-                        removeTask(this);
-                        if (dialogLoading != null) {
-                            dialogLoading.dismiss();
-                        }
-                        if (response.getStatus()) {
-                            getAllRequest();
-                        } else {
-                            getBaseActivity().showAlertDialog("Pesan", response.getMessage());
-                        }
+            final LoadingDialog dialogLoading = new LoadingDialog();
+            dialogLoading.show(getBaseActivity().getFragmentManager(), DIALOG_FRAGMENT_FLAG);
+            RequestJenisSurat model = new RequestJenisSurat();
+            model.setMethod("reqApprove");
+            model.setNik_penduduk(item.getNik_penduduk());
+            model.setId_surat(item.getId_surat());
+            TaskApproveSurat task = new TaskApproveSurat(getBaseActivity()) {
+                @Override
+                protected void onSuccess(ModelResponse response) {
+                    removeTask(this);
+                    if (dialogLoading != null) {
+                        dialogLoading.dismiss();
                     }
+                    if (response.getStatus()) {
+                        getAllRequest();
+                    } else {
+                        getBaseActivity().showAlertDialog("Pesan", response.getMessage());
+                    }
+                }
 
-                    @Override
-                    protected void onFailed(String message) {
-                        removeTask(this);
-                        if (dialogLoading != null) {
-                            dialogLoading.dismiss();
-                        }
-                        getBaseActivity().showAlertDialog("Pesan", message);
+                @Override
+                protected void onFailed(String message) {
+                    removeTask(this);
+                    if (dialogLoading != null) {
+                        dialogLoading.dismiss();
                     }
-                };
-                registerTask(task);
-                task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, model);
-            }
+                    getBaseActivity().showAlertDialog("Pesan", message);
+                }
+            };
+            registerTask(task);
+            task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, model);
+
+        }
+
+        @Override
+        public void onReject(ModelRequestSurat item) {
+            final LoadingDialog dialogLoading = new LoadingDialog();
+            dialogLoading.show(getBaseActivity().getFragmentManager(), DIALOG_FRAGMENT_FLAG);
+            RequestJenisSurat model = new RequestJenisSurat();
+            model.setMethod("reqReject");
+            model.setNik_penduduk(item.getNik_penduduk());
+            model.setId_surat(item.getId_surat());
+            TaskApproveSurat task = new TaskApproveSurat(getBaseActivity()) {
+                @Override
+                protected void onSuccess(ModelResponse response) {
+                    removeTask(this);
+                    if (dialogLoading != null) {
+                        dialogLoading.dismiss();
+                    }
+                    if (response.getStatus()) {
+                        getAllRequest();
+                    } else {
+                        getBaseActivity().showAlertDialog("Pesan", response.getMessage());
+                    }
+                }
+
+                @Override
+                protected void onFailed(String message) {
+                    removeTask(this);
+                    if (dialogLoading != null) {
+                        dialogLoading.dismiss();
+                    }
+                    getBaseActivity().showAlertDialog("Pesan", message);
+                }
+            };
+            registerTask(task);
+            task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, model);
+        }
+
+        @Override
+        public void onView(ModelRequestSurat item) {
+            APP.log(item.getLink_surat());
+            downloadFile(item);
         }
     }
 
