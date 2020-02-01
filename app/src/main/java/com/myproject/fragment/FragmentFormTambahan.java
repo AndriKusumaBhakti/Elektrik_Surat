@@ -44,7 +44,7 @@ public class FragmentFormTambahan extends BaseFragment {
     private AccountEntity accountEntity;
     protected SimpleDateFormat sdf = new SimpleDateFormat("dd-MMMM-yyyy", Locale.ENGLISH);
 
-    private CardView psik, sib, sktm, skbna, skbni, skbtl, sit, skkem, skkk, skpot, skpn;
+    private CardView psik, sib, skk, sktm, skbna, skbni, skbtl, sit, skkem, skkk, skpot, skpn;
     private Button btn_simpan;
     private String key, id_surat;
     Calendar caalendarTgl_benar, calenderTgl_meninggal, calenderTgl_nikah_psg, calenderTgl_lhr_psg;
@@ -55,13 +55,13 @@ public class FragmentFormTambahan extends BaseFragment {
             nama_pondok, alasan, nik_meninggal, hari_meninggal, tmp_meninggal, penyebab, hub_pelapor
             , atas_nama, jenis_merk, tipe, tahun, tahun_buat, no_mesin, no_rangka, no_polisi, nama_anak, nik_anak
             , asal_sklah, penghasilan, kmps_bersangkutan, bin_binti, ayah, ibu, kwg_psg, pkerjaan_psg, bin_binti_psg
-            , alamat_psg, ayah_psg, ibu_psg, wali_nkh_psg, mas_kawin_psg, nama_psg, jk_psg, tmp_lhr_psg;
+            , alamat_psg, ayah_psg, ibu_psg, wali_nkh_psg, mas_kawin_psg, nama_psg, jk_psg, tmp_lhr_psg, jenis_kehilangan;
 
     TextInputLayout nama_acara_, tmp_kerja_, anak_dari_, nama_benar_, nik_benar_, anak_dari2_,
             nama_pondok_, alasan_, nik_meninggal_, hari_meninggal_, tmp_meninggal_, penyebab_, hub_pelapor_
             , atas_nama_, jenis_merk_, tipe_, tahun_, tahun_buat_, no_mesin_, no_rangka_, no_polisi_,
             nama_anak_, nik_anak_, asal_sklah_, penghasilan_, kmps_bersangkutan_, bin_binti_, ayah_, ibu_, kwg_psg_
-            , pkerjaan_psg_, bin_binti_psg_, alamat_psg_, ayah_psg_, ibu_psg_, wali_nkh_psg_, mas_kawin_psg_, nama_psg_, jk_psg_, tmp_lhr_psg_;
+            , pkerjaan_psg_, bin_binti_psg_, alamat_psg_, ayah_psg_, ibu_psg_, wali_nkh_psg_, mas_kawin_psg_, nama_psg_, jk_psg_, tmp_lhr_psg_, jenis_kehilangan_;
 
     TextView tgl_benar, tgl_meninggal, tgl_nikah_psg, jam_nikah_psg, tgl_lhr_psg;
 
@@ -98,6 +98,7 @@ public class FragmentFormTambahan extends BaseFragment {
     public void initView(View view) {
         psik = (CardView) view.findViewById(R.id.psik);
         sib = (CardView) view.findViewById(R.id.sib);
+        skk = (CardView) view.findViewById(R.id.skk);
         sktm = (CardView) view.findViewById(R.id.sktm);
         skbna = (CardView) view.findViewById(R.id.skbna);
         skbni = (CardView) view.findViewById(R.id.skbni);
@@ -149,6 +150,7 @@ public class FragmentFormTambahan extends BaseFragment {
         nama_psg = (EditText) view.findViewById(R.id.nama_psg);
         jk_psg = (EditText) view.findViewById(R.id.jk_psg);
         tmp_lhr_psg = (EditText) view.findViewById(R.id.tmp_lhr_psg);
+        jenis_kehilangan = (EditText) view.findViewById(R.id.jenis_kehilangan);
 
         nama_acara_ = (TextInputLayout) view.findViewById(R.id.nama_acara_);
         tmp_kerja_ = (TextInputLayout) view.findViewById(R.id.tmp_kerja_);
@@ -190,6 +192,7 @@ public class FragmentFormTambahan extends BaseFragment {
         nama_psg_ = (TextInputLayout) view.findViewById(R.id.nama_psg_);
         jk_psg_ = (TextInputLayout) view.findViewById(R.id.jk_psg_);
         tmp_lhr_psg_ = (TextInputLayout) view.findViewById(R.id.tmp_lhr_psg_);
+        jenis_kehilangan_ = (TextInputLayout) view.findViewById(R.id.jenis_kehilangan_);
 
         tgl_benar = (TextView) view.findViewById(R.id.tgl_benar);
         tgl_meninggal = (TextView) view.findViewById(R.id.tgl_meninggal);
@@ -202,6 +205,9 @@ public class FragmentFormTambahan extends BaseFragment {
                 break;
             case "sib":
                 sib.setVisibility(View.VISIBLE);
+                break;
+            case "skk":
+                skk.setVisibility(View.VISIBLE);
                 break;
             case "sktm":
                 sktm.setVisibility(View.VISIBLE);
@@ -251,6 +257,15 @@ public class FragmentFormTambahan extends BaseFragment {
                 status = false;
             } else {
                 tmp_kerja_.setError(null);
+            }
+        }
+        if (skk.getVisibility() == View.VISIBLE){
+            if (jenis_kehilangan.getText().toString().isEmpty()) {
+                jenis_kehilangan_.setErrorEnabled(true);
+                jenis_kehilangan_.setError(getResources().getString(R.string.data_required));
+                status = false;
+            } else {
+                jenis_kehilangan_.setError(null);
             }
         }
         if (sktm.getVisibility() == View.VISIBLE){
@@ -585,6 +600,9 @@ public class FragmentFormTambahan extends BaseFragment {
                         data.add(result1);
                     }else if (sib.getVisibility() == View.VISIBLE){
                         result1.put("tempat_kerja", tmp_kerja.getText().toString().trim());
+                        data.add(result1);
+                    }else if (skk.getVisibility() == View.VISIBLE){
+                        result1.put("jenis_kehilangan", jenis_kehilangan.getText().toString().trim());
                         data.add(result1);
                     }else if (sktm.getVisibility() == View.VISIBLE){
                         result1.put("anak_dari", anak_dari.getText().toString().trim());
