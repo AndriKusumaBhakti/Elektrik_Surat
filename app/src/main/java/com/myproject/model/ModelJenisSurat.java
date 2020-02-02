@@ -7,6 +7,7 @@ public class ModelJenisSurat implements Serializable {
     private String jenis_surat;
     private String status;
     private String status_surat;
+    private String form_tambahan;
 
     public String getId_jenis_surat() {
         return id_jenis_surat;
@@ -38,5 +39,13 @@ public class ModelJenisSurat implements Serializable {
 
     public void setStatus_surat(String status_surat) {
         this.status_surat = status_surat;
+    }
+
+    public String getForm_tambahan() {
+        return form_tambahan;
+    }
+
+    public void setForm_tambahan(String form_tambahan) {
+        this.form_tambahan = form_tambahan;
     }
 }

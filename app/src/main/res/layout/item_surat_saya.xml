@@ -15,7 +15,7 @@
         android:background="@color/greywhite">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/medbooks_60dp"
+            android:layout_height="match_parent"
             android:background="@color/white"
             android:orientation="horizontal"
             android:padding="@dimen/medbooks_10dp">
@@ -23,6 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="@dimen/medbooks_5dp"
                 android:layout_weight="1"
+                android:layout_marginTop="@dimen/medbooks_5dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center|left">
@@ -34,18 +35,10 @@
                     android:text="Nama"
                     android:textSize="@dimen/medbooks_14dp"
                     android:maxLines="1"/>
-                <TextView
-                    android:id="@+id/form_tambahan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Form Tambahan"
-                    android:textSize="@dimen/medbooks_10dp"
-                    android:maxLines="1"/>
             </LinearLayout>
             <ImageView
                 android:id="@+id/icon_request"
-                android:src="@drawable/request_file"
+                android:src="@drawable/ic_download_blue"
                 android:layout_width="@dimen/medbooks_30dp"
                 android:layout_height="@dimen/medbooks_30dp"
                 android:layout_marginRight="@dimen/medbooks_5dp"

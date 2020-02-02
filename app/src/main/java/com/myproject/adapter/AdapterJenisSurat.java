@@ -13,6 +13,7 @@ import com.myproject.R;
 import com.myproject.model.ModelJenisSurat;
 import com.myproject.model.ModelRequestSurat;
 import com.myproject.model.response.ResponseJenisSurat;
+import com.myproject.util.StringUtil;
 
 import java.util.ArrayList;
 
@@ -29,10 +30,12 @@ public class AdapterJenisSurat extends RecyclerView.Adapter<AdapterJenisSurat.Vi
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView name;
+        public TextView form_tambahan;
         public ImageView icon_request;
         public ViewHolder(View v){
             super(v);
             name = (TextView) v.findViewById(R.id.single_nama);
+            form_tambahan = (TextView) v.findViewById(R.id.form_tambahan);
             icon_request = (ImageView) v.findViewById(R.id.icon_request);
         }
     }
@@ -47,6 +50,11 @@ public class AdapterJenisSurat extends RecyclerView.Adapter<AdapterJenisSurat.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position){
         holder.name.setText(mDataSet.get(position).getJenis_surat());
+        if (StringUtil.checkNullString(mDataSet.get(position).getForm_tambahan()).isEmpty()){
+            holder.form_tambahan.setText("");
+        }else{
+            holder.form_tambahan.setText("Data tambahan ("+mDataSet.get(position).getForm_tambahan()+")");
+        }
         holder.icon_request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

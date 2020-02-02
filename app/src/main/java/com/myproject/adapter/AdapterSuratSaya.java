@@ -38,7 +38,7 @@ public class AdapterSuratSaya extends RecyclerView.Adapter<AdapterSuratSaya.View
 
     @Override
     public AdapterSuratSaya.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View v = LayoutInflater.from(mContext).inflate(R.layout.item_jenis_surat,parent,false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.item_surat_saya,parent,false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
