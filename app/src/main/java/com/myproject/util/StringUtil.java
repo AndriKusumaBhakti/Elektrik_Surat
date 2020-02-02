@@ -127,7 +127,7 @@ public class StringUtil {
     }
 
     public static boolean isAlpha(String s){
-        String pattern= "^.*[a-zA-Z].*$";
+        String pattern= "^[a-zA-Z]+$";
         if(s.matches(pattern)){
             return true;
         }

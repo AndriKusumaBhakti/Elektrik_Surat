@@ -278,7 +278,7 @@ public class FragmentFormTambahan extends BaseFragment {
             }
         }
         if (skbna.getVisibility() == View.VISIBLE){
-            if (nama_benar.getText().toString().isEmpty() && !StringUtil.isAlpha(nama_benar.getText().toString())) {
+            if (nama_benar.getText().toString().isEmpty() || !StringUtil.isAlpha(nama_benar.getText().toString())) {
                 nama_benar_.setErrorEnabled(true);
                 nama_benar_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
@@ -287,7 +287,7 @@ public class FragmentFormTambahan extends BaseFragment {
             }
         }
         if (skbni.getVisibility() == View.VISIBLE){
-            if (nik_benar.getText().toString().isEmpty() && !StringUtil.isNumeric(nik_benar.getText().toString())) {
+            if (nik_benar.getText().toString().isEmpty() || !StringUtil.isNumeric(nik_benar.getText().toString())) {
                 nik_benar_.setErrorEnabled(true);
                 nik_benar_.setError(getResources().getString(R.string.data_required_numeric));
                 status = false;
@@ -321,14 +321,14 @@ public class FragmentFormTambahan extends BaseFragment {
             }
         }
         if (skkem.getVisibility() == View.VISIBLE){
-            if (nik_meninggal.getText().toString().isEmpty() && !StringUtil.isNumeric(nik_meninggal.getText().toString())) {
+            if (nik_meninggal.getText().toString().isEmpty() || !StringUtil.isNumeric(nik_meninggal.getText().toString())) {
                 nik_meninggal_.setErrorEnabled(true);
                 nik_meninggal_.setError(getResources().getString(R.string.data_required_numeric));
                 status = false;
             } else {
                 nik_meninggal_.setError(null);
             }
-            if (hari_meninggal.getText().toString().isEmpty() && !StringUtil.isAlpha(hari_meninggal.getText().toString())) {
+            if (hari_meninggal.getText().toString().isEmpty() || !StringUtil.isAlpha(hari_meninggal.getText().toString())) {
                 hari_meninggal_.setErrorEnabled(true);
                 hari_meninggal_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
@@ -349,7 +349,7 @@ public class FragmentFormTambahan extends BaseFragment {
             } else {
                 penyebab_.setError(null);
             }
-            if (hub_pelapor.getText().toString().isEmpty() && !StringUtil.isAlpha(hub_pelapor.getText().toString())) {
+            if (hub_pelapor.getText().toString().isEmpty() || !StringUtil.isAlpha(hub_pelapor.getText().toString())) {
                 hub_pelapor_.setErrorEnabled(true);
                 hub_pelapor_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
@@ -358,7 +358,7 @@ public class FragmentFormTambahan extends BaseFragment {
             }
         }
         if (skkk.getVisibility() == View.VISIBLE){
-            if (atas_nama.getText().toString().isEmpty()  && !StringUtil.isAlpha(atas_nama.getText().toString())) {
+            if (atas_nama.getText().toString().isEmpty()  || !StringUtil.isAlpha(atas_nama.getText().toString())) {
                 atas_nama_.setErrorEnabled(true);
                 atas_nama_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
@@ -379,14 +379,14 @@ public class FragmentFormTambahan extends BaseFragment {
             } else {
                 tipe_.setError(null);
             }
-            if (tahun.getText().toString().isEmpty() && !StringUtil.isNumeric(tahun.getText().toString())) {
+            if (tahun.getText().toString().isEmpty() || !StringUtil.isNumeric(tahun.getText().toString())) {
                 tahun_.setErrorEnabled(true);
                 tahun_.setError(getResources().getString(R.string.data_required_numeric));
                 status = false;
             } else {
                 tahun_.setError(null);
             }
-            if (tahun_buat.getText().toString().isEmpty() && !StringUtil.isNumeric(tahun_buat.getText().toString())) {
+            if (tahun_buat.getText().toString().isEmpty() || !StringUtil.isNumeric(tahun_buat.getText().toString())) {
                 tahun_buat_.setErrorEnabled(true);
                 tahun_buat_.setError(getResources().getString(R.string.data_required_numeric));
                 status = false;
@@ -416,14 +416,14 @@ public class FragmentFormTambahan extends BaseFragment {
             }
         }
         if (skpot.getVisibility() == View.VISIBLE){
-            if (nama_anak.getText().toString().isEmpty() && !StringUtil.isAlpha(nama_anak.getText().toString())) {
+            if (nama_anak.getText().toString().isEmpty() || !StringUtil.isAlpha(nama_anak.getText().toString())) {
                 nama_anak_.setErrorEnabled(true);
                 nama_anak_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 nama_anak_.setError(null);
             }
-            if (nik_anak.getText().toString().isEmpty() && !StringUtil.isNumeric(nik_anak.getText().toString())) {
+            if (nik_anak.getText().toString().isEmpty() || !StringUtil.isNumeric(nik_anak.getText().toString())) {
                 nik_anak_.setErrorEnabled(true);
                 nik_anak_.setError(getResources().getString(R.string.data_required_numeric));
                 status = false;
@@ -437,7 +437,7 @@ public class FragmentFormTambahan extends BaseFragment {
             } else {
                 asal_sklah_.setError(null);
             }
-            if (penghasilan.getText().toString().isEmpty()  && !StringUtil.isNumeric(penghasilan.getText().toString())) {
+            if (penghasilan.getText().toString().isEmpty()  || !StringUtil.isNumeric(penghasilan.getText().toString())) {
                 penghasilan_.setErrorEnabled(true);
                 penghasilan_.setError(getResources().getString(R.string.data_required_numeric));
                 status = false;
@@ -453,63 +453,63 @@ public class FragmentFormTambahan extends BaseFragment {
             }
         }
         if (skpn.getVisibility() == View.VISIBLE){
-            if (bin_binti.getText().toString().isEmpty() && !StringUtil.isAlpha(bin_binti.getText().toString())) {
+            if (bin_binti.getText().toString().isEmpty() || !StringUtil.isAlpha(bin_binti.getText().toString())) {
                 bin_binti_.setErrorEnabled(true);
                 bin_binti_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 bin_binti_.setError(null);
             }
-            if (ayah.getText().toString().isEmpty() && !StringUtil.isAlpha(ayah.getText().toString())) {
+            if (ayah.getText().toString().isEmpty() || !StringUtil.isAlpha(ayah.getText().toString())) {
                 ayah_.setErrorEnabled(true);
                 ayah_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 ayah_.setError(null);
             }
-            if (ibu.getText().toString().isEmpty() && !StringUtil.isAlpha(ibu.getText().toString())) {
+            if (ibu.getText().toString().isEmpty() || !StringUtil.isAlpha(ibu.getText().toString())) {
                 ibu_.setErrorEnabled(true);
                 ibu_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 ibu_.setError(null);
             }
-            if (nama_psg.getText().toString().isEmpty() && !StringUtil.isAlpha(nama_psg.getText().toString())) {
+            if (nama_psg.getText().toString().isEmpty() || !StringUtil.isAlpha(nama_psg.getText().toString())) {
                 nama_psg_.setErrorEnabled(true);
                 nama_psg_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 nama_psg_.setError(null);
             }
-            if (jk_psg.getText().toString().isEmpty() && !StringUtil.isAlpha(jk_psg.getText().toString())) {
+            if (jk_psg.getText().toString().isEmpty() || !StringUtil.isAlpha(jk_psg.getText().toString())) {
                 jk_psg_.setErrorEnabled(true);
                 jk_psg_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 jk_psg_.setError(null);
             }
-            if (tmp_lhr_psg.getText().toString().isEmpty() && !StringUtil.isAlpha(tmp_lhr_psg.getText().toString())) {
+            if (tmp_lhr_psg.getText().toString().isEmpty() || !StringUtil.isAlpha(tmp_lhr_psg.getText().toString())) {
                 tmp_lhr_psg_.setErrorEnabled(true);
                 tmp_lhr_psg_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 tmp_lhr_psg_.setError(null);
             }
-            if (kwg_psg.getText().toString().isEmpty()  && !StringUtil.isAlpha(kwg_psg.getText().toString())) {
+            if (kwg_psg.getText().toString().isEmpty()  || !StringUtil.isAlpha(kwg_psg.getText().toString())) {
                 kwg_psg_.setErrorEnabled(true);
                 kwg_psg_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 kwg_psg_.setError(null);
             }
-            if (pkerjaan_psg.getText().toString().isEmpty() && !StringUtil.isAlpha(pkerjaan_psg.getText().toString())) {
+            if (pkerjaan_psg.getText().toString().isEmpty() || !StringUtil.isAlpha(pkerjaan_psg.getText().toString())) {
                 pkerjaan_psg_.setErrorEnabled(true);
                 pkerjaan_psg_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 pkerjaan_psg_.setError(null);
             }
-            if (bin_binti_psg.getText().toString().isEmpty() && !StringUtil.isAlpha(bin_binti_psg.getText().toString())) {
+            if (bin_binti_psg.getText().toString().isEmpty() || !StringUtil.isAlpha(bin_binti_psg.getText().toString())) {
                 bin_binti_psg_.setErrorEnabled(true);
                 bin_binti_psg_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
@@ -523,21 +523,21 @@ public class FragmentFormTambahan extends BaseFragment {
             } else {
                 alamat_psg_.setError(null);
             }
-            if (ayah_psg.getText().toString().isEmpty() && !StringUtil.isAlpha(ayah_psg.getText().toString())) {
+            if (ayah_psg.getText().toString().isEmpty() || !StringUtil.isAlpha(ayah_psg.getText().toString())) {
                 ayah_psg_.setErrorEnabled(true);
                 ayah_psg_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 ayah_psg_.setError(null);
             }
-            if (ibu_psg.getText().toString().isEmpty() && !StringUtil.isAlpha(ibu_psg.getText().toString())) {
+            if (ibu_psg.getText().toString().isEmpty() || !StringUtil.isAlpha(ibu_psg.getText().toString())) {
                 ibu_psg_.setErrorEnabled(true);
                 ibu_psg_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
             } else {
                 ibu_psg_.setError(null);
             }
-            if (wali_nkh_psg.getText().toString().isEmpty() && !StringUtil.isAlpha(wali_nkh_psg.getText().toString())) {
+            if (wali_nkh_psg.getText().toString().isEmpty() || !StringUtil.isAlpha(wali_nkh_psg.getText().toString())) {
                 wali_nkh_psg_.setErrorEnabled(true);
                 wali_nkh_psg_.setError(getResources().getString(R.string.data_required_alpha));
                 status = false;
@@ -702,7 +702,7 @@ public class FragmentFormTambahan extends BaseFragment {
                     }
                     sendData(data);
                 }else{
-                    getBaseActivity().showAlertDialog("Pesan", "Data tidak boleh ada yang kosong");
+                    getBaseActivity().showAlertDialog("Pesan", "Data tidak valid");
                 }
             }
         });
