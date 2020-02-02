@@ -1,12 +1,17 @@
 package com.myproject.fragment;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TabHost;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,10 +50,13 @@ public class FragmentRequestKades extends BaseFragment {
     private ArrayList<ModelRequestSurat> list;
     private AdapterRequestSurat adapter;
     private LinearLayoutManager mLayoutManager;
+    private TabHost mTabHost;
 
     private Account account;
     private List<AccountEntity> profiles;
     private AccountEntity accountEntity;
+
+    private String status = "1";
 
     ProgressDialog mProgressDialog;
 
@@ -85,8 +93,44 @@ public class FragmentRequestKades extends BaseFragment {
         emptyData = (LinearLayout) view.findViewById(R.id.emptyData);
         list_data = (RecyclerView) view.findViewById(R.id.list_data);
         loading = (ProgressBar) view.findViewById(R.id.loading);
+        mTabHost = (TabHost) view.findViewById(R.id.tabHost);
         loading.setVisibility(View.VISIBLE);
+        setupTabs();
         getAllRequest();
+    }
+
+    private void setupTabs() {
+        mTabHost.setup(); // important!
+        //Tab 1
+        TabHost.TabSpec spec = mTabHost.newTabSpec("Approve");
+        spec.setContent(R.id.tab1);
+        View tabView = createTabView(getBaseActivity(), "Approve", R.layout.tabs_view);
+        spec.setIndicator(tabView);
+        mTabHost.addTab(spec);
+
+        //Tab 2
+        TabHost.TabSpec spec2 = mTabHost.newTabSpec("Reject");
+        spec2.setContent(R.id.tab2);
+        tabView = createTabView(getBaseActivity(), "Reject", R.layout.tabs_view1);
+        spec2.setIndicator(tabView);
+        mTabHost.addTab(spec2);
+
+        //Tab 3
+        TabHost.TabSpec spec3 = mTabHost.newTabSpec("Proses");
+        spec3.setContent(R.id.tab3);
+        tabView = createTabView(getBaseActivity(), "Proses", R.layout.tabs_view2);
+        spec3.setIndicator(tabView);
+        mTabHost.addTab(spec3);
+
+
+    }
+
+    private static View createTabView(final Context context, final String text, final int backgroundResId) {
+        View view = LayoutInflater.from(context).inflate(backgroundResId, null);
+        TextView tv = (TextView) view.findViewById(R.id.tabsText);
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        tv.setText(text);
+        return view;
     }
 
     @Override
@@ -108,6 +152,33 @@ public class FragmentRequestKades extends BaseFragment {
 
             }
         });
+
+        mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+
+            public void onTabChanged(String tabId) {
+                APP.log("TAB : "+tabId);
+                if ("Approve".equals(tabId)) {
+                    loading.setVisibility(View.VISIBLE);
+                    list_data.setVisibility(View.GONE);
+                    emptyData.setVisibility(View.GONE);
+                    status = "1";
+                    getAllRequest();
+                } else if ("Reject".equals(tabId)) {
+                    loading.setVisibility(View.VISIBLE);
+                    list_data.setVisibility(View.GONE);
+                    emptyData.setVisibility(View.GONE);
+                    status = "0";
+                    getAllRequest();
+                }else if ("Proses".equals(tabId)) {
+                    loading.setVisibility(View.VISIBLE);
+                    list_data.setVisibility(View.GONE);
+                    emptyData.setVisibility(View.GONE);
+                    status = "2";
+                    getAllRequest();
+                }
+            }
+        });
+
         refresh_data.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(final MaterialRefreshLayout materialRefreshLayout) {
@@ -151,6 +222,7 @@ public class FragmentRequestKades extends BaseFragment {
         model.setMethod("reqAllSurat");
 
         model.setNik_penduduk(accountEntity.getNik());
+        model.setStatus(status);
         list = new ArrayList<>();
         adapter = new AdapterRequestSurat(getActivity(), list, new MyAdapterListener());
         TaskAllSurat task = new TaskAllSurat(getBaseActivity()) {

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.myproject.R;
 import com.myproject.model.ModelRequestSurat;
+import com.myproject.util.StringUtil;
 
 import java.util.ArrayList;
 
@@ -51,14 +52,19 @@ public class AdapterRequestSurat extends RecyclerView.Adapter<AdapterRequestSura
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position){
-        if (mDataSet.get(position).getStatus_surat().equals("1")){
-            /*holder.foto_single_avatar.setVisibility(View.GONE);*/
-            holder.onApprove.setVisibility(View.GONE);
-            holder.onReject.setVisibility(View.GONE);
-        }else{
-            /*holder.foto_single_avatar.setVisibility(View.VISIBLE);*/
+        if (StringUtil.checkNullString(mDataSet.get(position).getStatus_surat()).isEmpty()){
             holder.onApprove.setVisibility(View.VISIBLE);
             holder.onReject.setVisibility(View.VISIBLE);
+        }else {
+            if (mDataSet.get(position).getStatus_surat().equals("1")) {
+                /*holder.foto_single_avatar.setVisibility(View.GONE);*/
+                holder.onApprove.setVisibility(View.GONE);
+                holder.onReject.setVisibility(View.GONE);
+            } else {
+                /*holder.foto_single_avatar.setVisibility(View.VISIBLE);*/
+                holder.onApprove.setVisibility(View.GONE);
+                holder.onReject.setVisibility(View.GONE);
+            }
         }
         holder.single_nama.setText(String.valueOf(mDataSet.get(position).getNama()+" ("+mDataSet.get(position).getNik_penduduk()+")"));
         holder.single_alamat.setText(String.valueOf(mDataSet.get(position).getAlamat()));

@@ -4,6 +4,7 @@ public class RequestJenisSurat {
     private String method;
     private String nik_penduduk;
     private String id_surat;
+    private String status;
 
     public String getMethod() {
         return method;
@@ -27,5 +28,13 @@ public class RequestJenisSurat {
 
     public void setId_surat(String id_surat) {
         this.id_surat = id_surat;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

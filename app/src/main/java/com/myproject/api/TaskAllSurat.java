@@ -54,6 +54,7 @@ public abstract class TaskAllSurat extends AsyncTask<RequestJenisSurat, Void, Bo
         MultipartTypedOutput multipartTypedOutput = new MultipartTypedOutput();
         multipartTypedOutput.addPart("method", new TypedString(StringUtil.checkNullString(request.getMethod())));
         multipartTypedOutput.addPart("nik_penduduk", new TypedString(StringUtil.checkNullString(request.getNik_penduduk())));
+        multipartTypedOutput.addPart("status", new TypedString(StringUtil.checkNullString(request.getStatus())));
         return multipartTypedOutput;
     }
 
