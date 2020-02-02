@@ -481,9 +481,9 @@ public class FragmentFormTambahan extends BaseFragment {
             } else {
                 nama_psg_.setError(null);
             }
-            if (jk_psg.getText().toString().isEmpty() || !StringUtil.isAlpha(jk_psg.getText().toString())) {
+            if (jk_psg.getText().toString().isEmpty()) {
                 jk_psg_.setErrorEnabled(true);
-                jk_psg_.setError(getResources().getString(R.string.data_required_alpha));
+                jk_psg_.setError(getResources().getString(R.string.data_required));
                 status = false;
             } else {
                 jk_psg_.setError(null);
