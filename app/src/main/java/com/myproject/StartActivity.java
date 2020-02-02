@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
 import com.myproject.activity.BaseActivity;
 import com.myproject.activity.DashboardActivity;
@@ -12,6 +13,7 @@ import com.myproject.activity.DashboardKepalaDesa;
 import com.myproject.aplication.APP;
 import com.myproject.aplication.Preference;
 import com.myproject.fragment.LoginFragment;
+import com.myproject.util.FunctionUtil;
 
 public class StartActivity extends BaseActivity {
     AsyncTask waitingTask;
@@ -20,11 +22,15 @@ public class StartActivity extends BaseActivity {
     private boolean isFromPushNotif;
     final public static String PUSH_NOTIF_MODEL_NAME = "PUSH_NOTIF_MODEL_NAME";
     final public static String IS_FROM_PUSH_NOTIF = "IS_FROM_PUSH_NOTIF";
+    String[] PERMISSIONS = {
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            android.Manifest.permission.READ_EXTERNAL_STORAGE,
+            android.Manifest.permission.CAMERA
+    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         isPushToMain = false;
-        loading();
         if (getIntent().getExtras() != null) {
             isFromPushNotif = getIntent().getExtras().getBoolean(IS_FROM_PUSH_NOTIF);
             notifModelName = getIntent().getExtras().getString(PUSH_NOTIF_MODEL_NAME);
@@ -33,11 +39,35 @@ public class StartActivity extends BaseActivity {
             }
         }
         super.onCreate(savedInstanceState);
+        runApps();
+    }
+
+    private void runApps() {
+        if(FunctionUtil.hasPermissions(this, PERMISSIONS)){
+            loading();
+        }else{
+            ActivityCompat.requestPermissions(this, PERMISSIONS, 0);
+        }
     }
 
     @Override
     public void initView() {
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case 0: {
+                if(FunctionUtil.hasPermissions(this, PERMISSIONS)){
+                    loading();
+                }else {
+                    StartActivity.this.finish();
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                }
+            }
+        }
     }
 
     @Override
