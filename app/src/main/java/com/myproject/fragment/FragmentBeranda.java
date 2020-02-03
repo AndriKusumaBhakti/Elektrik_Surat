@@ -108,18 +108,20 @@ public class FragmentBeranda extends BaseFragment {
         getBaseActivity().setActionbarListener(new OnActionbarListener() {
             @Override
             public void onLeftIconClick() {
-                processAnimateSelectorProfile();
+                /*processAnimateSelectorProfile();*/
+                getFragmentManager().popBackStack();
             }
 
             @Override
             public void onRightIconClick() {
-                qrScanner.setPrompt(getResources().getString(R.string.hintscanQr));
-                qrScanner.initiateScan();
+                /*qrScanner.setPrompt(getResources().getString(R.string.hintscanQr));
+                qrScanner.initiateScan();*/
+                getDataSurat();
             }
 
             @Override
             public void onRight2IconClick() {
-                getDataSurat();
+                /*getDataSurat();*/
             }
         });
         lprofile.setOnClickListener(new View.OnClickListener() {
@@ -134,9 +136,9 @@ public class FragmentBeranda extends BaseFragment {
 
     @Override
     public void updateUI() {
-        getBaseActivity().setLeftIcon(R.drawable.no_user);
-        getBaseActivity().setRightIcon2(R.drawable.icon_reload_white);
-        getBaseActivity().setRightIcon(R.drawable.icon_scan_qr_white);
+        getBaseActivity().setLeftIcon(R.drawable.back_white);
+        getBaseActivity().setRightIcon2(0);
+        getBaseActivity().setRightIcon(R.drawable.icon_reload_white);
         getBaseActivity().showDisplayLogoTitle(false);
         getBaseActivity().changeHomeToolbarBackground(true);
         getBaseActivity().setLeftView(accountEntity.getFoto());
@@ -200,7 +202,7 @@ public class FragmentBeranda extends BaseFragment {
             }
         }
         updateUI();
-        DashboardActivity.instance.showBottomMenu();
+        //DashboardActivity.instance.showBottomMenu();
     }
 
     private void getDataSurat(){

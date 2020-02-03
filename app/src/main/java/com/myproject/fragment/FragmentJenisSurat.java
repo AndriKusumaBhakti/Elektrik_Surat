@@ -118,7 +118,8 @@ public class FragmentJenisSurat extends BaseFragment {
         getBaseActivity().setActionbarListener(new OnActionbarListener() {
             @Override
             public void onLeftIconClick() {
-                processAnimateSelectorProfile();
+                //processAnimateSelectorProfile();
+                getFragmentManager().popBackStack();
             }
 
             @Override
@@ -152,7 +153,7 @@ public class FragmentJenisSurat extends BaseFragment {
 
     @Override
     public void updateUI() {
-        getBaseActivity().setLeftIcon(R.drawable.no_user);
+        getBaseActivity().setLeftIcon(R.drawable.back_white);
         getBaseActivity().setRightIcon2(0);
         getBaseActivity().setRightIcon(0);
         getBaseActivity().showDisplayLogoTitle(false);
@@ -326,6 +327,6 @@ public class FragmentJenisSurat extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-        DashboardActivity.instance.showBottomMenu();
+        //DashboardActivity.instance.showBottomMenu();
     }
 }

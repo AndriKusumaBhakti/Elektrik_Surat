@@ -1,80 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_page_main_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/greywhite"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_e_surat">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/menuUtama"
+            android:layout_marginTop="@dimen/medbooks_30dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
-            <ProgressBar
-                android:id="@+id/loading"
-                android:layout_width="@dimen/medbooks_40dp"
-                android:layout_height="@dimen/medbooks_40dp"
-                android:layout_margin="@dimen/medbooks_30dp"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/white"
-                android:progressBackgroundTint="@color/google_blue"
-                android:background="@color/transparent"
-                android:visibility="gone"
-                android:layout_marginRight="5dp" />
-            <LinearLayout
-                android:id="@+id/emptyData"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/medbooks_100dp"
-                android:visibility="gone"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/jenis_surat"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/medbooks_10dp"
-                    android:contentDescription="@null"
-                    android:scaleType="fitCenter"
-                    android:visibility="visible"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="@dimen/medbooks_12dp"
-                    android:layout_marginBottom="@dimen/medbooks_10dp"
-                    android:textColor="@color/black"
-                    android:text="Tidak ada data"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-            <com.cjj.MaterialRefreshLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/refresh_data"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:overlay="true"
-                app:wave_color="@color/transparent"
-                app:progress_colors="@array/material_colors"
-                app:progress_size_type="normal"
-                app:wave_height_type="normal"
-                app:wave_show="false">
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/list_data"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:divider="@null"
-                    android:dividerHeight="0dp"
-                    android:scrollbars="vertical"
-                    android:fadeScrollbars="false"
-                    android:visibility="gone"/>
-            </com.cjj.MaterialRefreshLayout>
-        </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"/>
     </RelativeLayout>
     <ViewAnimator
         android:id="@+id/select_profile_animator"

@@ -37,4 +37,11 @@
     <string name="take_photo_method">Tambah Foto</string>
     <string name="select_file">Pilih Berkas</string>
     <string name="crop_image">Potong Gambar</string>
+
+    <string-array name="main_menu_utama">
+        <item>Beranda</item>
+        <item>Jenis Surat</item>
+        <item>File Saya</item>
+        <item>Lainnya</item>
+    </string-array>
 </resources>

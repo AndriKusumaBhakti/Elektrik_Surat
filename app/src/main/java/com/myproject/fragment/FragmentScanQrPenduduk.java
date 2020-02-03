@@ -152,6 +152,7 @@ public class FragmentScanQrPenduduk extends BaseFragment{
 
     private void scanQRCode(){
         loadingScan.show(getBaseActivity().getFragmentManager(), DIALOG_FRAGMENT_FLAG);
+        loadingScan.setCancelLable(true);
         if (!StringUtil.checkNullString(qr_code).isEmpty()){
             ModelQrCode model = new ModelQrCode();
             model.setMethod("getScanQR");

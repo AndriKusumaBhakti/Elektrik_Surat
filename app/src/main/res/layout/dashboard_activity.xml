@@ -22,12 +22,13 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:selectedBackgroundVisible="false"/>
+<!--    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation-->
+<!--        android:id="@+id/bottom_navigation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        app:selectedBackgroundVisible="false"/>-->
+
 
     <RelativeLayout
         android:id="@+id/container"

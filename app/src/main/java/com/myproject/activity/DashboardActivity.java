@@ -25,6 +25,7 @@ import com.myproject.fragment.FragmentJenisSurat;
 import com.myproject.fragment.FragmentLainnya;
 import com.myproject.fragment.FragmentScanQr;
 import com.myproject.fragment.FragmentScanQrPenduduk;
+import com.myproject.fragment.MenuFragment;
 import com.myproject.util.Constants;
 import com.myproject.util.FunctionUtil;
 
@@ -32,7 +33,7 @@ import java.lang.ref.WeakReference;
 
 public class DashboardActivity extends BaseActivity {
     private Toolbar toolbar;
-    private AHBottomNavigation bottomNavigation;
+    //private AHBottomNavigation bottomNavigation;
 
     public static DashboardActivity instance;
     private int currentSelectedTab;
@@ -55,32 +56,32 @@ public class DashboardActivity extends BaseActivity {
             isFromPushNotif = getIntent().getExtras().getBoolean(IS_FROM_PUSH_NOTIF);
             notifModelName = getIntent().getExtras().getString(PUSH_NOTIF_MODEL_NAME);
             if (notifModelName != null && notifModelName.contains("TEST") && isFromPushNotif) {
-                replaceFragmentwithTag(R.id.container, FragmentBeranda.newInstance(), false, "HOME");
+                replaceFragmentwithTag(R.id.container, MenuFragment.newInstance(), false, "HOME");
             }
         }
     }
 
-    public void showBottomMenu() {
-        bottomNavigation.setVisibility(View.VISIBLE);
-    }
-
-    public void hideBottomMenu() {
-        bottomNavigation.setVisibility(View.GONE);
-    }
+//    public void showBottomMenu() {
+//        bottomNavigation.setVisibility(View.VISIBLE);
+//    }
+//
+//    public void hideBottomMenu() {
+//        bottomNavigation.setVisibility(View.GONE);
+//    }
 
     @Override
     public void initView() {
         requestAppPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0, 0);
         toolbar = (Toolbar) findViewById(R.id.mainToolbar);
-        bottomNavigation= (AHBottomNavigation) findViewById(R.id.bottom_navigation);
+        //bottomNavigation= (AHBottomNavigation) findViewById(R.id.bottom_navigation);
         setSupportActionBar(toolbar);
 
-        this.createNavigationItems();
+        //this.createNavigationItems();
 
-        replaceFragmentwithTag(R.id.container, FragmentBeranda.newInstance(), false, "HOME");
+        replaceFragmentwithTag(R.id.container, MenuFragment.newInstance(), false, "HOME");
     }
 
-    private void createNavigationItems()
+    /*private void createNavigationItems()
     {
         //Initialize Item
         AHBottomNavigationItem home = new AHBottomNavigationItem(getResources().getString(R.string.beranda), R.drawable.icon_home);
@@ -106,12 +107,12 @@ public class DashboardActivity extends BaseActivity {
         bottomNavigation.setInactiveColor(Color.parseColor("#231f20"));
 
         bottomNavigation.setBehaviorTranslationEnabled(false);
-    }
+    }*/
 
 
     @Override
     public void setUICallbacks() {
-        bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
+        /*bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
             public boolean onTabSelected(int position, boolean wasSelected) {
                 switch (position) {
@@ -138,7 +139,7 @@ public class DashboardActivity extends BaseActivity {
                 }
                 return true;
             }
-        });
+        });*/
     }
 
     @Override
@@ -152,7 +153,7 @@ public class DashboardActivity extends BaseActivity {
     }
 
     public void pushFragmentDashboard(BaseFragment fragment) {
-        hideBottomMenu();
+        //hideBottomMenu();
         if (currentSelectedTab == 0) {
             pushFragmentToHome(fragment);
         } else if (currentSelectedTab == 1) {
